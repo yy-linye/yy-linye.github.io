@@ -317,78 +317,20 @@
 
       
         
-          
-            <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+          <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
 <li>下载node.js并安装（官网下载安装），默认会安装npm。</li>
 <li>下载安装git（官网下载安装）</li>
 <li>下载安装hexo。方法：打开cmd 运行npm install -g hexo（要翻墙）</li>
-<li>创建github仓库，用于存储我们的网站资源。<ul>
-<li>在GitHub上创建名为xxx.github.io的项目，xxx是自己GitHub的用户名<br><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1494742779656.png" width="400"></li>
-</ul>
-</li>
-</ul>
-<h2 id="本地搭建hexo静态博客"><a href="#本地搭建hexo静态博客" class="headerlink" title="本地搭建hexo静态博客"></a>本地搭建hexo静态博客</h2><ul>
-<li>命令行cd到需要存放的目录。</li>
-<li>生成hexo模板：<br><code>$ hexo init xxx.github.io</code>。<code>xxx</code>可以使用自己GitHub的用户名。运行完成后，会创建一个名为<code>xxx.github.io</code>的文件夹，里面包含hexo模板资源。</li>
-<li>cd到<code>xxx.github.io</code>目录，运行<code>hexo server</code>，运行成功后访问本地<code>http://localhost:4000/</code>可以看到博客已经搭建完成。<br><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1494745939808.png" width="400"></li>
-</ul>
-<h2 id="将博客与GitHub关联"><a href="#将博客与GitHub关联" class="headerlink" title="将博客与GitHub关联"></a>将博客与GitHub关联</h2><ul>
-<li><p>打开<code>xxx.github.io</code>文件夹内的<code>_config.yml</code>文件，修改如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">	type: git</div><div class="line">	repository: https://github.com/yy-linye/yy-linye.github.io.git</div><div class="line">	branch: master</div></pre></td></tr></table></figure>
-</li>
-<li><p>运行：<code>npm install hexo-deployer-git --save</code></p>
-</li>
-<li>运行：<code>hexo g</code>（本地生成静态文件）</li>
-<li>运行：<code>hexo d</code>（将本地静态文件推送至GitHub）</li>
-</ul>
-<p>此时，打开浏览器，可以访问<a href="http://yy-linye.github.io" target="_blank" rel="external">http://yy-linye.github.io</a></p>
-<h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><p>现在我们已经可以通过GitHub的域名访问我们的博客，不过很多时候我们需要使用自己的域名，这时候我们就需要进行域名绑定。</p>
+<li><p>创建github仓库，用于存储我们的网站资源。</p>
 <ul>
-<li>我们先去购买一个域名，这里我们使用的是阿里云：<a href="http://wanwang.aliyun.com" target="_blank" rel="external">http://wanwang.aliyun.com</a></li>
-<li><p>获取GitHubPage的 ip 地址：<code>ping http://yy-linye.github.io</code><br><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1494746583298.png" width="400"></p>
-</li>
-<li><p>域名绑定 ip 地址</p>
-<ul>
-<li>在阿里云登录你的账号，找到域名相关选项</li>
-<li>点击解析进行域名解析：<br><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1494746371071.png" width="400"></li>
-<li>输入需要绑定的 ip 地址<br><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1494746681378.png" width="400"></li>
-<li>绑定成功后，如下图所示<br><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1494746862218.png" width="400"></li>
-</ul>
-</li>
-<li><p>博客添加CNAME文件</p>
-<ul>
-<li>配置完域名解析后，进入博客目录，在source目录下新建CNAME文件（CNAME文件需要去除后缀），写入域名，如：izaya.cn</li>
-</ul>
-</li>
-<li>运行：<code>hexo g</code></li>
-<li>运行：<code>hexo d</code></li>
-</ul>
-<p>至此，绑定域名就完成了，我们现在可以通过 izaya.cn 来访问博客。</p>
-<h2 id="个性化设置"><a href="#个性化设置" class="headerlink" title="个性化设置"></a>个性化设置</h2><h3 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h3><p>在<code>xxx.github.io</code>文件夹根目录下有一个<code>_config.yml</code>文件，打开<code>_config.yml</code>文件，我们可以修改标题，作者等信息。<br>例：    </p>
-<pre><code>title: 临也的博客    //你博客的名字
- author: 临也  //你的名字
-language: zh-Hans    //语言 中文
-</code></pre><p><strong>注意：</strong>每一个值的冒号后面必须有一个半角空格！</p>
-<h3 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h3><p>以next主题为例。进入themes目录，进行如下操作：</p>
-<ul>
-<li>git clone <a href="https://github.com/iissnan/hexo-theme-next.git（主题的地址）" target="_blank" rel="external">https://github.com/iissnan/hexo-theme-next.git（主题的地址）</a></li>
-<li>将下载的主题文件夹名改为next（主题的名字）</li>
-<li>打开根目录下的<code>_config.yml</code>文件，修改<code>themes</code>参数为<code>next</code>（主题文件夹的名字）</li>
-<li>运行：<code>hexo g</code></li>
-<li>运行：<code>hexo d</code></li>
-</ul>
-<p>现在打开 izaya.cn（你自己的域名），会发现你的博客已经焕然一新。</p>
-<p>关于hexo-next主题的更多个性化配置，可以参考：<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">next主题使用</a></p>
-<h2 id="编写博客"><a href="#编写博客" class="headerlink" title="编写博客"></a>编写博客</h2><ul>
-<li>在<code>xxx.github.io</code>目录下执行<code>hexo new &quot;我的文章&quot;</code>，会在source-&gt;_posts文件夹内生成一个.md文件。</li>
-<li>编辑该文件（遵循Markdown规则）</li>
-<li>运行：<code>hexo clean</code> （删除本地静态文件，可不执行）</li>
-<li>运行：<code>hexo g</code>（生成本地静态文件）</li>
-<li>运行：<code>hexo d</code>（将本地静态文件推送至github）</li>
-</ul>
-<h2 id="错误解决"><a href="#错误解决" class="headerlink" title="错误解决"></a>错误解决</h2><h3 id="permission-denied"><a href="#permission-denied" class="headerlink" title="permission denied"></a>permission denied</h3><p>如果在执行<code>hexo d</code>时报错，在前面加上sudo进行提权，<code>sudo hexo d</code>这样就可以了。</p>
-
-          
+<li>在GitHub上创建名为xxx.github.io的项目，xxx是自己GitHub的用户名<br><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1494742779656.png" width="400">
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/14/Hexo搭建博客教程/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
