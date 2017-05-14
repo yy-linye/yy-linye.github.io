@@ -1,0 +1,846 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="什么是Today Widgettoday widget是App Extensions中的一种，可以让用户快速的访问重要的信息，例如：查看天气，获取股票信息，查看清单列表等等。就算在锁屏状态下用户依旧可以使用widget。（以下简称widget） Apple 指出，确保widget用于提供你认为最合适的任务，可以帮助用户快速更新数据，或者完成简单的任务，不要将一些冗长的任务和功能加到widget中。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Today Widget实战">
+<meta property="og:url" content="http://yoursite.com/2017/05/14/TodayWidget实战/index.html">
+<meta property="og:site_name" content="临也的小树林">
+<meta property="og:description" content="什么是Today Widgettoday widget是App Extensions中的一种，可以让用户快速的访问重要的信息，例如：查看天气，获取股票信息，查看清单列表等等。就算在锁屏状态下用户依旧可以使用widget。（以下简称widget） Apple 指出，确保widget用于提供你认为最合适的任务，可以帮助用户快速更新数据，或者完成简单的任务，不要将一些冗长的任务和功能加到widget中。">
+<meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1488330898440.png">
+<meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1488331189473.png">
+<meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1488351656258.png">
+<meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1488351911693.png">
+<meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1488352556989.png">
+<meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1488352801241.png">
+<meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1488359521909.png">
+<meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1488359690319.png">
+<meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1488374612034.png">
+<meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1488358894184.png">
+<meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1488417639145.png">
+<meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1488418410901.png">
+<meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1488417559368.png">
+<meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1488418190479.png">
+<meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1488418622919.png">
+<meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1488419807618.png">
+<meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1488376506989.png">
+<meta property="og:updated_time" content="2017-05-14T05:56:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Today Widget实战">
+<meta name="twitter:description" content="什么是Today Widgettoday widget是App Extensions中的一种，可以让用户快速的访问重要的信息，例如：查看天气，获取股票信息，查看清单列表等等。就算在锁屏状态下用户依旧可以使用widget。（以下简称widget） Apple 指出，确保widget用于提供你认为最合适的任务，可以帮助用户快速更新数据，或者完成简单的任务，不要将一些冗长的任务和功能加到widget中。">
+<meta name="twitter:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1488330898440.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/05/14/TodayWidget实战/"/>
+
+
+
+
+
+  <title>Today Widget实战 | 临也的小树林</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">临也的小树林</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/14/TodayWidget实战/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="临也">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/dog.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="临也的小树林">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Today Widget实战</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-14T13:54:37+08:00">
+                2017-05-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="什么是Today-Widget"><a href="#什么是Today-Widget" class="headerlink" title="什么是Today Widget"></a>什么是Today Widget</h2><p>today widget是App Extensions中的一种，可以让用户快速的访问重要的信息，例如：查看天气，获取股票信息，查看清单列表等等。就算在锁屏状态下用户依旧可以使用widget。（以下简称widget）</p>
+<p>Apple 指出，确保widget用于提供你认为最合适的任务，可以帮助用户快速更新数据，或者完成简单的任务，不要将一些冗长的任务和功能加到widget中。</p>
+<p>widget的使用建议：</p>
+<ul>
+<li>确保内容看起来总是最新的</li>
+<li>对于用户交互的反馈能够表现良好</li>
+<li>需要注意内存占用的限制，否则系统将会终止widget<a id="more"></a>
+<h2 id="创建一个Today-Widget"><a href="#创建一个Today-Widget" class="headerlink" title="创建一个Today Widget"></a>创建一个Today Widget</h2>因为扩展是一个独立的进程，所以我们需要新建一个target。<br><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1488330898440.png" width="382"></li>
+</ul>
+<p>现在我们的工程中多出了一个和target同名的文件夹，<code>MainInterface</code>的storyboard就是我们的程序入口，对应是<code>TodayViewController</code>的ViewController。我们可以直接在storyboard中布局我们想要的UI，然后再ViewController中做逻辑处理。</p>
+<p><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1488331189473.png" width="604"></p>
+<p>当然如果你希望使用纯代码来完成UI，可以修改<code>Info.plist</code>中的<code>NSExtension</code>字段</p>
+<ul>
+<li>删除<code>NSExtensionMainStoryboard</code>字段，并且删除<code>MainInterface</code>的storyboard</li>
+<li>新增一个<code>NSExtensionPrincipalClass</code>字段，并设为<code>TodayViewController</code>（你也可以指定其他的ViewController）</li>
+</ul>
+<p><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1488351656258.png" width="568"> </p>
+<p>不管是使用storyboard还是使用纯代码，我们只要像平时在正常app里写代码一样，在ViewController中进行处理。</p>
+<h2 id="Today-Widget开发"><a href="#Today-Widget开发" class="headerlink" title="Today Widget开发"></a>Today Widget开发</h2><p>下面我们就是用storyboard的方式来进行开发，我们先编译一下看看。</p>
+<p>首先将scheme选择为widget的target，然后<code>Cmd + R</code>。</p>
+<p><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1488351911693.png" width="141"></p>
+<p>运行之后我们会发现storyboard会默认给我们加个一个<code>Hello World</code>的label。</p>
+<p>由于iOS 10系统进行了风格调整，Today Widget的风格和位置也产生了很大的变化，以下是iOS 10和iOS 10以前的风格对比。</p>
+<p>iOS 10  | 小于iOS 10</p>
+<p><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1488352556989.png" width="229"><br><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1488352801241.png" width="229"></p>
+<h3 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h3><p>UI实现部分的就不说了，只说一些注意点和坑。<br>由于需要兼容iOS 10和iOS 10之前的版本，所以我们需要两套UI配色，根据系统版本去切换不同的配色，在<code>viewDidLoad</code>方法中进行处理即可。</p>
+<pre><code>  if (IS_DEVICE_RUNNING_IOS_10_AND_ABOVE) {
+    textColor = kTextLightGrayColor;
+    lineColor = [UIColor colorWithWhite:0 alpha:0.3];
+    borderColor = [UIColor colorWithWhite:0 alpha:0.5];
+}else {
+    textColor = kTextWhiteColor;
+    lineColor = [UIColor colorWithWhite:1 alpha:0.8];
+    borderColor = [UIColor colorWithRed:221/255.0 green:221/255.0 blue:221/255.0 alpha:0.3];
+    self.preferredContentSize = CGSizeMake(0, 170);
+}
+</code></pre><h5 id="iOS-10之前"><a href="#iOS-10之前" class="headerlink" title="iOS 10之前"></a>iOS 10之前</h5><p>我的做法是iOS 10之前直接使用<code>self.preferredContentSize = CGSizeMake(0, 170);</code>来设置widget展示视图的大小。当然你需要动态的改变大小的话，可以自己在对应的事件里去改变<code>preferredContentSize</code>。</p>
+<p><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1488359521909.png" width="229"></p>
+<p>我们可以看到这时候widget是处于偏移的状态，这时候我们可以使用<code>NCWidgetProviding</code>给出的协议方法来解决。</p>
+<pre><code>- (UIEdgeInsets)widgetMarginInsetsForProposedMarginInsets:(UIEdgeInsets)defaultMarginInsets{
+return UIEdgeInsetsMake(0, 10, 0, 10);
+}
+</code></pre><p>设置widget的左右边距为10。结果如下。</p>
+<p><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1488359690319.png" width="229"></p>
+<h5 id="iOS-10上折叠和展开处理"><a href="#iOS-10上折叠和展开处理" class="headerlink" title="iOS 10上折叠和展开处理"></a>iOS 10上折叠和展开处理</h5><p>iOS 10之后<code>NSExtensionContext</code>新增了<code>widgetLargestAvailableDisplayMode</code>属性，用来确认当前widget是展开还是折叠状态。折叠状态的值是固定的大小，展开状态的时候大小可以自定义，如果我们只需要一个固定的大小的话，就使用和iOS 10之前一样的写法就行。如果我们希望widget可以在折叠和展开的时候显示不同的UI，我们可以在DisplayMode属性值改变的时候去改变widget的高度。</p>
+<p>如果我们希望widget初始化状态就是展开，我们可以在<code>viewWillAppear</code>中将widget的model设为<code>NCWidgetDisplayModeExpanded</code>。<strong>记得加上版本判断</strong>。</p>
+<pre><code>- (void)viewWillAppear:(BOOL)animated {
+[super viewWillAppear:animated];
+if (IS_DEVICE_RUNNING_IOS_10_AND_ABOVE) {
+    self.extensionContext.widgetLargestAvailableDisplayMode = NCWidgetDisplayModeExpanded;
+  }
+}
+</code></pre><p>当我们将<code>widgetLargestAvailableDisplayMode</code>的值设为<code>NCWidgetDisplayModeExpanded</code>，3DTouch上会自动加上widget。</p>
+<p><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1488374612034.png" width="229"></p>
+<p>当我们改变<code>widgetLargestAvailableDisplayMode</code>的值时系统会调用<code>widgetActiveDisplayModeDidChange</code>方法。我们可以在这个方法中处理高度。</p>
+<p>// If implemented, called when the active display mode changes.</p>
+<p>// The widget may wish to change its preferredContentSize to better accommodate the new display mode.</p>
+<pre><code>- (void)widgetActiveDisplayModeDidChange:(NCWidgetDisplayMode)activeDisplayMode withMaximumSize:(CGSize)maxSize {
+if (activeDisplayMode == NCWidgetDisplayModeCompact) {
+       self.preferredContentSize = CGSizeMake(0, 110);
+} else {
+    self.preferredContentSize = CGSizeMake(0, 170);
+   }
+}
+</code></pre><p>现在，我们可以看到一个带有展开和折叠功能的widget了。</p>
+<p><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1488358894184.png" width="229"></p>
+<p>注意点：</p>
+<ul>
+<li>如果初始化的时候将widget设为折叠状态，那么右上角就不会显示折叠/展开按钮</li>
+<li>明明设为展开，可是第一次显示还是折叠状态，这是由于在确认widget的mode之前就设置了<code>preferredContentSize</code>的值</li>
+</ul>
+<h3 id="调起主App"><a href="#调起主App" class="headerlink" title="调起主App"></a>调起主App</h3><p>因为widget相当于是一个独立的应用，我们可以通过URL Scheme的方式调起主App，对应的方法如下：</p>
+<pre><code>[self.extensionContext openURL:[NSURL URLWithString:@&quot;ddyc://service/serviceCommon&quot;] completionHandler:nil];
+</code></pre><h3 id="数据共享-App-Groups"><a href="#数据共享-App-Groups" class="headerlink" title="数据共享 - App Groups"></a>数据共享 - App Groups</h3><p>widget和主app进行数据共享有如下的几种方式：</p>
+<ul>
+<li>NSUserDefaults</li>
+<li>NSFileManager</li>
+</ul>
+<p>首先我们在开发者后台创建一个具有App Groups的App ID</p>
+<p><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1488417639145.png" width="604"></p>
+<p>创建主应用的App ID和widget的App ID</p>
+<p><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1488418410901.png" width="604"></p>
+<p>主应用的的App ID和Widget的App ID都需要添加App Groups功能，选择对应的App Groups ID</p>
+<p><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1488417559368.png" width="604"><br><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1488418190479.png" width="604"></p>
+<p>最后生成对应的Provisioning Profile文件，主应用和widget都需要有对应的。</p>
+<p><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1488418622919.png" width="719"></p>
+<p>回到项目工程，在containing App和widget两个target的Capabilities里，有个App Groups选项，打开这个选项，勾选上App Groups ID，要确保下面的三个小对勾都是正常的。<br>然后我们就可以通过<code>NSUserDefaults</code>和<code>NSFileManager</code>进行数据共享了。</p>
+<pre><code>NSUserDefaults
+存：
+NSUserDefaults *shared = [[NSUserDefaults alloc]initWithSuiteName:@&quot;group.widget.**&quot;];
+[shared setBool:@(YES) forKey:kWidgetTestKey];
+[shared synchronize];
+取：
+NSUserDefaults *shared = [[NSUserDefaults alloc]initWithSuiteName:@&quot;group.widget.**&quot;];
+BOOL testValue = [shared boolForKey:kWidgetTestKey];
+
+NSFileManager
+存：
+NSURL *containerURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@&quot;group.widget.**&quot;]; 
+containerURL = [containerURL URLByAppendingPathComponent:@&quot;Library/Caches/widget&quot;]; 
+NSString *value = @&quot;my name&quot;; 
+BOOL result = [value writeToURL:containerURL atomically:YES encoding:NSUTF8StringEncoding error:nil];
+取：
+NSURL *containerURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@&quot;group.widget.**&quot;]; 
+containerURL = [containerURL URLByAppendingPathComponent:@&quot;Library/Caches/widget&quot;]; 
+NSString *value = [NSString stringWithContentsOfURL:containerURL encoding:
+NSUTF8StringEncoding error:nil];
+</code></pre><p>SuiteName和GroupIdentifier就是我们创建的App Groups名称。</p>
+<h3 id="共享代码"><a href="#共享代码" class="headerlink" title="共享代码"></a>共享代码</h3><ul>
+<li>Framework</li>
+<li>pod引用组件库</li>
+</ul>
+<p>关于pod引用我们自己组件库的方式介绍一下。我们的podfile文件一般是如下写法：</p>
+<pre><code>platform :ios, &apos;7.0&apos;
+source &apos;git@192.168.1.10:ios/DDSpecRepo.git&apos;
+
+pod &apos;HTMLAttributedString&apos;, &apos;~&gt; 0.0.1&apos;
+pod &apos;HMSegmentedControl&apos;, &apos;~&gt; 1.5.2&apos;
+pod &apos;UITableView+FDTemplateLayoutCell&apos;, &apos;~&gt; 1.4&apos;
+pod &apos;tingyunApp&apos;
+pod &apos;GrowingIO&apos;
+pod &apos;UICountingLabel&apos;
+
+target &apos;HostApp&apos; do
+end
+target &apos;TestHostApp&apos; do
+ pod &apos;JPFPSStatus&apos;, &apos;~&gt; 0.1&apos;
+end
+</code></pre><p>如果我们直接加入widget的target，就会引用到多余的第三方库，这是我们可以使用<code>abstract_target</code>关键字，它可以使多个target共享相同的pod。最终写法如下：</p>
+<pre><code>platform :ios, &apos;7.0&apos;
+source &apos;git@192.168.1.10:ios/DDSpecRepo.git&apos;
+
+abstract_target &apos;HostApp&apos; do
+pod &apos;HTMLAttributedString&apos;, &apos;~&gt; 0.0.1&apos;
+pod &apos;HMSegmentedControl&apos;, &apos;~&gt; 1.5.2&apos;
+pod &apos;UITableView+FDTemplateLayoutCell&apos;, &apos;~&gt; 1.4&apos;
+pod &apos;tingyunApp&apos;
+pod &apos;GrowingIO&apos;
+pod &apos;UICountingLabel&apos;
+
+target &apos;HostApp&apos; do
+end
+target &apos;TestHostApp&apos; do
+ pod &apos;JPFPSStatus&apos;, &apos;~&gt; 0.1&apos;
+end
+end
+
+abstract_target &apos;Extension&apos; do
+pod &apos;SDWebImage&apos;
+
+target &apos;todayWidget&apos; do
+end
+target &apos;TestTodayWidget&apos; do
+end
+end
+</code></pre><p>这样我们的主App就可以使用它自己所需的第三方库，我们的widget也可以只引用自己需要的组件，不会受到主App的影响。<br>当我们引用一些自己的基础服务组件的时候，需要注意一点，由于widget中是没有UIApplication类的，所以我们无法引用使用了UIApplication的组件或第三方库，会导致编译不过。</p>
+<h3 id="网络部分"><a href="#网络部分" class="headerlink" title="网络部分"></a>网络部分</h3><p>开始我是想引用主App中的网络请求组件，不过由于牵扯的较多，而且有使用到UIApplication，所以只能放弃。<br>由于widget所需的数据不多，一般也就一个接口，所以我们直接使用NSURLSession进行网络请求就可以了，然后使用JSON映射的库或者自己使用KVC去生成模型对象。</p>
+<h2 id="最后是打包时遇到的坑"><a href="#最后是打包时遇到的坑" class="headerlink" title="最后是打包时遇到的坑"></a>最后是打包时遇到的坑</h2><p><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1488419807618.png" width="357"></p>
+<p>CFBundleVersion Mismatch</p>
+<p>CFBundleShortVersionString Mismatch </p>
+<p>这个错误是由于widget的build号和version跟主App的不同导致。解决办法就是利用脚本让每次build之后，widget和主App的信息同步。</p>
+<p><a href="http://stackoverflow.com/questions/30441750/use-same-cfbundleversion-and-cfbundleshortversionstring-in-all-targets" target="_blank" rel="external">stackoverflow上的解决办法</a></p>
+<p><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1488376506989.png" width="357"></p>
+<p>The bundle at … contains disallowed file ‘Frameworks’</p>
+<p>这个错误是由于cocoapods导致的，issues里给出的解决办法是删除这个空文件，除此之外我们也可以升级到最新版本的cocoapods来fix这个问题。</p>
+<p><a href="https://github.com/CocoaPods/CocoaPods/issues/4203" target="_blank" rel="external">cocoapods issues链接</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/08/WKWebView介绍/" rel="next" title="WKWebView介绍">
+                <i class="fa fa-chevron-left"></i> WKWebView介绍
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/dog.png"
+               alt="临也" />
+          <p class="site-author-name" itemprop="name">临也</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是Today-Widget"><span class="nav-number">1.</span> <span class="nav-text">什么是Today Widget</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建一个Today-Widget"><span class="nav-number">2.</span> <span class="nav-text">创建一个Today Widget</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Today-Widget开发"><span class="nav-number">3.</span> <span class="nav-text">Today Widget开发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#UI"><span class="nav-number">3.1.</span> <span class="nav-text">UI</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#iOS-10之前"><span class="nav-number">3.1.0.1.</span> <span class="nav-text">iOS 10之前</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#iOS-10上折叠和展开处理"><span class="nav-number">3.1.0.2.</span> <span class="nav-text">iOS 10上折叠和展开处理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调起主App"><span class="nav-number">3.2.</span> <span class="nav-text">调起主App</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据共享-App-Groups"><span class="nav-number">3.3.</span> <span class="nav-text">数据共享 - App Groups</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#共享代码"><span class="nav-number">3.4.</span> <span class="nav-text">共享代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络部分"><span class="nav-number">3.5.</span> <span class="nav-text">网络部分</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后是打包时遇到的坑"><span class="nav-number">4.</span> <span class="nav-text">最后是打包时遇到的坑</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">临也</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
