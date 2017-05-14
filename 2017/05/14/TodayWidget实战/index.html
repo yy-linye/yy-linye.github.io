@@ -113,7 +113,7 @@
 <meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1488418622919.png">
 <meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1488419807618.png">
 <meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1488376506989.png">
-<meta property="og:updated_time" content="2017-05-14T05:56:23.000Z">
+<meta property="og:updated_time" content="2017-05-14T05:57:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Today Widget实战">
 <meta name="twitter:description" content="什么是Today Widgettoday widget是App Extensions中的一种，可以让用户快速的访问重要的信息，例如：查看天气，获取股票信息，查看清单列表等等。就算在锁屏状态下用户依旧可以使用widget。（以下简称widget） Apple 指出，确保widget用于提供你认为最合适的任务，可以帮助用户快速更新数据，或者完成简单的任务，不要将一些冗长的任务和功能加到widget中。">
@@ -335,13 +335,11 @@
 
       
         <h2 id="什么是Today-Widget"><a href="#什么是Today-Widget" class="headerlink" title="什么是Today Widget"></a>什么是Today Widget</h2><p>today widget是App Extensions中的一种，可以让用户快速的访问重要的信息，例如：查看天气，获取股票信息，查看清单列表等等。就算在锁屏状态下用户依旧可以使用widget。（以下简称widget）</p>
-<p>Apple 指出，确保widget用于提供你认为最合适的任务，可以帮助用户快速更新数据，或者完成简单的任务，不要将一些冗长的任务和功能加到widget中。</p>
-<p>widget的使用建议：</p>
+<p>Apple 指出，确保widget用于提供你认为最合适的任务，可以帮助用户快速更新数据，或者完成简单的任务，不要将一些冗长的任务和功能加到widget中。<br><a id="more"></a><br>widget的使用建议：</p>
 <ul>
 <li>确保内容看起来总是最新的</li>
 <li>对于用户交互的反馈能够表现良好</li>
-<li>需要注意内存占用的限制，否则系统将会终止widget<a id="more"></a>
-<h2 id="创建一个Today-Widget"><a href="#创建一个Today-Widget" class="headerlink" title="创建一个Today Widget"></a>创建一个Today Widget</h2>因为扩展是一个独立的进程，所以我们需要新建一个target。<br><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1488330898440.png" width="382"></li>
+<li>需要注意内存占用的限制，否则系统将会终止widget<h2 id="创建一个Today-Widget"><a href="#创建一个Today-Widget" class="headerlink" title="创建一个Today Widget"></a>创建一个Today Widget</h2>因为扩展是一个独立的进程，所以我们需要新建一个target。<br><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1488330898440.png" width="382"></li>
 </ul>
 <p>现在我们的工程中多出了一个和target同名的文件夹，<code>MainInterface</code>的storyboard就是我们的程序入口，对应是<code>TodayViewController</code>的ViewController。我们可以直接在storyboard中布局我们想要的UI，然后再ViewController中做逻辑处理。</p>
 <p><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1488331189473.png" width="604"></p>
