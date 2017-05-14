@@ -1,0 +1,763 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="WebKit的发展WebKit是用来让网页浏览器绘制网页的排版引擎  除了IE和Firefox之外，市面上叫得上名字的浏览器都是基于WebKit发展起来的，Chrome, Safari, Opera, 360等等。 WebKit的代码源自1998年KDE所开发的HTML排版引擎KHTML和JavaScript引擎KJS。2001年6月25号Apple的Don Melton开始了webkit项目，一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WKWebView介绍">
+<meta property="og:url" content="http://yoursite.com/2017/05/08/WKWebView介绍/index.html">
+<meta property="og:site_name" content="临也的小树林">
+<meta property="og:description" content="WebKit的发展WebKit是用来让网页浏览器绘制网页的排版引擎  除了IE和Firefox之外，市面上叫得上名字的浏览器都是基于WebKit发展起来的，Chrome, Safari, Opera, 360等等。 WebKit的代码源自1998年KDE所开发的HTML排版引擎KHTML和JavaScript引擎KJS。2001年6月25号Apple的Don Melton开始了webkit项目，一">
+<meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1494239427274.png">
+<meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1494298609269.png">
+<meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1494298365686.png">
+<meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1494312913114.png">
+<meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1494313174490.png">
+<meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1494313703501.png">
+<meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1494313811014.png">
+<meta property="og:updated_time" content="2017-05-14T04:26:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="WKWebView介绍">
+<meta name="twitter:description" content="WebKit的发展WebKit是用来让网页浏览器绘制网页的排版引擎  除了IE和Firefox之外，市面上叫得上名字的浏览器都是基于WebKit发展起来的，Chrome, Safari, Opera, 360等等。 WebKit的代码源自1998年KDE所开发的HTML排版引擎KHTML和JavaScript引擎KJS。2001年6月25号Apple的Don Melton开始了webkit项目，一">
+<meta name="twitter:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1494239427274.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/05/08/WKWebView介绍/"/>
+
+
+
+
+
+  <title>WKWebView介绍 | 临也的小树林</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">临也的小树林</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/08/WKWebView介绍/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="临也">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/dog.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="临也的小树林">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">WKWebView介绍</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-08T13:29:27+08:00">
+                2017-05-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="WebKit的发展"><a href="#WebKit的发展" class="headerlink" title="WebKit的发展"></a>WebKit的发展</h4><p>WebKit是用来让网页浏览器绘制网页的排版引擎  除了IE和Firefox之外，市面上叫得上名字的浏览器都是基于WebKit发展起来的，Chrome, Safari, Opera, 360等等。</p>
+<p>WebKit的代码源自1998年<a href="https://zh.wikipedia.org/wiki/KDE" target="_blank" rel="external">KDE</a>所开发的HTML排版引擎<a href="https://zh.wikipedia.org/wiki/KHTML" target="_blank" rel="external">KHTML</a>和JavaScript引擎<a href="https://zh.wikipedia.org/wiki/KJS" target="_blank" rel="external">KJS</a>。2001年6月25号Apple的Don Melton开始了webkit项目，一开始webkit只是KHTML和KJS的fork，KHTML和KJS被移植到OS X上，并重命名为WebCore和JavaScriptCore。<br><a id="more"></a><br>由于KHTML和WebCore这两个分支有着不同的开发目的，所以他们代码互补的难度越来越高，后来经过双方不断的沟通和合作，问题得以解决，最终在2010年8月KDE开发平台4.5发布。它同时支持WebKit及KHTML，而KHTML的开发仍在继续。</p>
+<p>2005年6月7日Webkit开源</p>
+<p>2007年11月完成对HTML5媒体特色的支持，允许页面中以本地的方式嵌入视频，并且可以被script所控制。</p>
+<p>2008年6月2日，WebKit项目宣布他们重写了JavaScriptCore。</p>
+<p>时至今日，WebKit已发展为类似与Linux这样平台性的框架，已不是单一产品类型的开源项目。它是一个标准和变异的结合体。下面这张图能很好说明这点</p>
+<p><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1494239427274.png" width="450"></p>
+<p>WebKit提供了像这张图这样的标准框架和WebCore这样的核心库。</p>
+<p>标准的浏览器组件</p>
+<p>以下是现代浏览器的一些组件:</p>
+<ul>
+<li>解析(Parsing) (HTML, XML, CSS, JavaScript)</li>
+<li>排版(Layout)</li>
+<li>渲染(Text and graphics rendering)</li>
+<li>图片解码(Image decoding)</li>
+<li>图形加速(GPU interaction)</li>
+<li>网络访问(Network access)</li>
+<li>硬件加速(Hardware acceleration)</li>
+</ul>
+<p>除了前两个是被webkit浏览器所共享的，其他部分也就是对应的上图的灰色部分，需要各个平台各自去实现。</p>
+<p><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1494298609269.png" width="100">例如图像的绘制部分，在不同的平台上会有不同的库来实现。如下图所示:<br><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1494298365686.png" width="250"></p>
+<p>因为平台不同，目的不同，功能实现不同，导致了webkit衍生出多个移植版本，也就是WebKit Ports。<br>常见的一些WebKit ports：</p>
+<ul>
+<li>Apple’s Mac Port</li>
+<li>Chromium</li>
+<li>Amazon Silk</li>
+<li>Blackberry</li>
+<li>WebKitGTK+</li>
+<li>QtWebKit</li>
+</ul>
+<h4 id="WKWebView和UIWebView的对比"><a href="#WKWebView和UIWebView的对比" class="headerlink" title="WKWebView和UIWebView的对比"></a>WKWebView和UIWebView的对比</h4><p>在2007年6月，Apple宣布WebKit已经被移植到iOS，并作为Safari的一部分。</p>
+<p>我们一直使用的UIWebView也是以WebKit作为内核，而Javascript引擎使用JavascriptCore。<br>iOS 8之前我们只能通过UIWebView来加载网页，并且开发者也不能够自行封装Javascript引擎，大家都知道UIWebView内存占用高，渲染慢，Javascript执行效率低，还会有内存泄漏的风险。</p>
+<p>因此苹果在iOS8推出了WKWebView，WKWebView同样使用 WebKit 内核，但是 Javascript 引擎使用 Nitro。</p>
+<p>Nitro是JavaScriptCore的进化，它会将Javascript编译为本地的机器语言，不再需要字节解码器，加速了Javascript的运行效率。</p>
+<p>WKWebView优点</p>
+<ul>
+<li>占用内存小，可能只有UIWebView的1/3 ~ 1/4</li>
+<li>支持高达60fps的滚动刷新率，和内置手势</li>
+<li>具有Safari相同的JavaScript引擎Nitro(四个进程解释执行优化js代码)</li>
+<li>更多的支持HTML5的特性</li>
+</ul>
+<p>以下是UIWebView和WKWebView内存占用对比，可以看到第一次打开页面时内存变动情况。</p>
+<p>UIWebView内存使用情况</p>
+<p><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1494312913114.png" width="400"></p>
+<p>WKWebView内存使用情况</p>
+<p><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1494313174490.png" width="400"></p>
+<p>真机测试</p>
+<p>UIWebView内存使用情况</p>
+<p><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1494313703501.png" width="400"></p>
+<p>WKWebView内存使用情况</p>
+<p><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1494313811014.png" width="400"></p>
+<p>从上面的图可以看出来，内存的优化还是显而易见的。</p>
+<h4 id="使用WKWebViewConfiguration对WKWebView进行配置"><a href="#使用WKWebViewConfiguration对WKWebView进行配置" class="headerlink" title="使用WKWebViewConfiguration对WKWebView进行配置"></a>使用WKWebViewConfiguration对WKWebView进行配置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//我们先创建一个WKWebViewConfiguration对象</div><div class="line">WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 设置进程池</div><div class="line">WKProcessPool *pool = [[WKProcessPool alloc] init];</div><div class="line">config.processPool = pool;</div><div class="line">// WKProcessPool类中没有暴露任何属性和方法，配置为同一个进程池的WebView会共享数据，例如Cookie、用户凭证等，开发者可以通过编写管理类来分配不同维度的WebView在不同进程池中</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// 进行偏好设置</div><div class="line">WKPreferences *preferences = [[WKPreferences alloc] init];</div><div class="line">preferences.minimumFontSize = 10; // 最小字体大小</div><div class="line">preferences.javaScriptEnabled = YES;// 设置是否支持javaScript</div><div class="line">preferences.javaScriptCanOpenWindowsAutomatically = NO;// 设置是否允许不经过用户交互由javaScript自动打开窗口</div><div class="line">config.preferences = preferences;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// 设置内容交互控制器 用于处理JavaScript与native交互</div><div class="line">WKUserContentController * userController = [[WKUserContentController alloc]init];</div><div class="line">        </div><div class="line">//设置处理代理并且注册要被js调用的方法名称</div><div class="line">[userController addScriptMessageHandler:self name:@&quot;nameAction&quot;];</div><div class="line">        </div><div class="line">//js注入，注入一个测试方法。</div><div class="line">NSString *javaScriptSource = @&quot;window.webkit.messageHandlers.nameAction.postMessage(&#123;\&quot;name\&quot;:\&quot;linye\&quot;&#125;)&quot;;</div><div class="line">WKUserScript *userScript = [[WKUserScript alloc] initWithSource:javaScriptSource injectionTime:WKUserScriptInjectionTimeAtDocumentStart forMainFrameOnly:YES];// forMainFrameOnly:NO(全局窗口)，yes（只限主窗口）</div><div class="line">[userController addUserScript:userScript];</div><div class="line">config.userContentController = userController;</div></pre></td></tr></table></figure>
+<p>注意：addScriptMessageHandler很容易引起循环引用，导致控制器无法被释放，所以需要在viewWillDisappear中移除handler</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">- (void)viewWillDisappear:(BOOL)animated</div><div class="line">&#123;</div><div class="line">    [super viewWillDisappear:animated];</div><div class="line">    // 因此这里要记得移除handlers</div><div class="line">    [self.webView.configuration.userContentController removeScriptMessageHandlerForName:@&quot;name&quot;];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 通过configuration创建WKWebView</div><div class="line">WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:config];</div><div class="line">```      </div><div class="line">当JavaScript通过window.webkit.messageHandlers.name.postMessage()方法来向native发送消息，支持OC中字典，数组，NSNumber等原生数据类型。在native代理的回调方法中，会获取到JavaScript传递进来的消息，如下：</div></pre></td></tr></table></figure>
+<p>-(void)userContentController:(WKUserContentController <em>)userContentController didReceiveScriptMessage:(WKScriptMessage </em>)message{<br>    //这里可以获取到JavaScript传递进来的消息<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">#### 关于native与JavaScript交互</div><div class="line"></div><div class="line">1.JavaScript调用native方法</div><div class="line"></div><div class="line">就是之前我们介绍的使用WKUserContentController添加Script，然后再代理方法里处理回调的方式。</div><div class="line"></div><div class="line">2.native调用JavaScript方法</div><div class="line"></div><div class="line">这种方式通过WKWebView直接调用evaluteJavaScript:completionHandler:方法来实现。</div><div class="line"></div><div class="line">3.将JavaScript代码注入到网页</div><div class="line"></div><div class="line">JavaScript代码的注入也是通过WKUserContentController来完成的，使用addUserScript:方法来注入JavaScript，其中需要通过WKUserScript类来生成要注入的对象。</div><div class="line">这种方式可以在网页中注入一些自定义的JavaScript代码，也可以注入自定义的方法，再使用evaluateJavaScript:completionHandler:来调用方法。</div><div class="line"></div><div class="line">#### WKWebView的WKNavigationDelegate</div><div class="line"></div><div class="line">下面给出一些在 UIWebView 中常用的方法的 WKWebView 版本。</div></pre></td></tr></table></figure></p>
+<p>//准备加载页面<br>UIWebViewDelegate - webView:shouldStartLoadWithRequest:navigationType<br>WKNavigationDelegate - webView:didStartProvisionalNavigation:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line">//已开始加载页面</div><div class="line">UIWebViewDelegate - webViewDidStartLoad:</div><div class="line">WKNavigationDelegate - webView:didCommitNavigation:</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//页面已全部加载</div><div class="line">UIWebViewDelegate - webViewDidFinishLoad:</div><div class="line">WKNavigationDelegate - webView:didFinishNavigation:</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//加载页面失败</div><div class="line">UIWebViewDelegate - webView:didFailLoadWithError:</div><div class="line">WKNavigationDelegate - webView:didFailNavigation:withError:</div><div class="line">WKNavigationDelegate - webView:didFailProvisionalNavigation:withError:</div></pre></td></tr></table></figure>
+<p>WKNavagationDelegate协议还有两个重要方法，监听页面渲染流程与控制页面跳转</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//决定是否响应网页的某个动作，例如加载，回退，前进，刷新等</div><div class="line">- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">////接收到数据后是否允许执行渲染</div><div class="line">- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler;</div></pre></td></tr></table></figure>
+<h4 id="WKWebView的WKUIDelegate"><a href="#WKWebView的WKUIDelegate" class="headerlink" title="WKWebView的WKUIDelegate"></a>WKWebView的WKUIDelegate</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//创建新的webView时调用的方法</div><div class="line">-(WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures&#123;</div><div class="line">    return webView;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//关闭webView时调用的方法</div><div class="line">-(void)webViewDidClose:(WKWebView *)webView&#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//下面这些方法是交互JavaScript的方法</div><div class="line">//JavaScript调用alert方法后回调的方法 message中为alert提示的信息 必须要在其中调用completionHandler()</div><div class="line">-(void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler&#123;</div><div class="line">    NSLog(@&quot;%@&quot;,message);</div><div class="line">    completionHandler();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//JavaScript调用confirm方法后回调的方法 confirm是js中的确定框，需要在block中把用户选择的情况传递进去</div><div class="line">-(void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL))completionHandler&#123;</div><div class="line">    NSLog(@&quot;%@&quot;,message);</div><div class="line">    completionHandler(YES);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//JavaScript调用prompt方法后回调的方法 prompt是js中的输入框 需要在block中把用户输入的信息传入</div><div class="line">-(void)webView:(WKWebView *)webView runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt defaultText:(NSString *)defaultText initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(NSString * _Nullable))completionHandler&#123;</div><div class="line">    NSLog(@&quot;%@&quot;,prompt);</div><div class="line">    completionHandler(@&quot;123&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="WKWebView-那些坑"><a href="#WKWebView-那些坑" class="headerlink" title="WKWebView 那些坑"></a><a href="http://mp.weixin.qq.com/s/rhYKLIbXOsUJC_n6dt9UfA" target="_blank" rel="external">WKWebView 那些坑</a></h4><h4 id="WKWebView加载本地html文件"><a href="#WKWebView加载本地html文件" class="headerlink" title="WKWebView加载本地html文件"></a>WKWebView加载本地html文件</h4><p>之前在网络上看到别人说直接使用<code>loadRequest</code>加载本地html会有问题，需要使用iOS9中加入的这个方法来加载本地html文件：<code>[WKWebView loadFileURL:allowingReadAccessToURL:]</code>。</p>
+<p>可是自己使用<code>loadRequest</code>试了下，发现可以正常加载。这就想不通了，所以就去找为什么会这样。然后发现了这篇文章:<a href="http://www.cnblogs.com/breezemist/p/4595906.html" target="_blank" rel="external">http://www.cnblogs.com/breezemist/p/4595906.html</a>。</p>
+<p>总结一下，其实并不是说WKWebView无法加载本地文件，而是在真机的沙盒目录下，WKWebView无法获取访问权限，导致资源加载不到。<br>所以<code>loadFileURL:allowingReadAccessToURL:</code>是为了在访问受限的时候去使用的，<code>allowingReadAccessToURL</code>指定一个安全的访问路径。（模拟器上并没有访问限制的影响，该影响只在真机上存在）</p>
+<p>如果我们的html文件和资源是放在<strong>工程</strong>中的，不管是真机还是模拟器，都可以直接使用<code>loadRequest</code>去加载，不会受到访问限制的影响。</p>
+<h5 id="当资源存放在沙盒目录："><a href="#当资源存放在沙盒目录：" class="headerlink" title="当资源存放在沙盒目录："></a>当资源存放在沙盒目录：</h5><p>模拟器上不管是使用<code>loadRequest</code>还是<code>loadFileURL:allowingReadAccessToURL:</code>都可以加载本地文件，没有资源访问的限制，<code>allowingReadAccessToURL</code>也起不了作用。</p>
+<p>真机上，我们只能使用<code>loadFileURL:allowingReadAccessToURL:</code>方法，因为<code>loadRequest</code>由于访问受限，读取不到任何资源。</p>
+<p>如果我们的html文件和资源存放在documents目录下，那么<code>allowingReadAccessTo:</code>参数也需要指定为documents的路径，这样才能获得documents目录下其他资源的访问权限。</p>
+<!--#### 未解决问题
+
+图片加载不出
+
+<img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1490852724323.png" width="229"/>
+
+
+loading 无法消失
+
+<img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1490852569310.png" width="229"/>
+
+
+
+#### progressView
+<img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1490842880358.gif" width="300"/>
+<img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1490843128768.gif" width="300"/>-->
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/16/3dTouch/" rel="next" title="3DTouch">
+                <i class="fa fa-chevron-left"></i> 3DTouch
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/dog.png"
+               alt="临也" />
+          <p class="site-author-name" itemprop="name">临也</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#WebKit的发展"><span class="nav-number">1.</span> <span class="nav-text">WebKit的发展</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WKWebView和UIWebView的对比"><span class="nav-number">2.</span> <span class="nav-text">WKWebView和UIWebView的对比</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用WKWebViewConfiguration对WKWebView进行配置"><span class="nav-number">3.</span> <span class="nav-text">使用WKWebViewConfiguration对WKWebView进行配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WKWebView的WKUIDelegate"><span class="nav-number">4.</span> <span class="nav-text">WKWebView的WKUIDelegate</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WKWebView-那些坑"><span class="nav-number">5.</span> <span class="nav-text">WKWebView 那些坑</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WKWebView加载本地html文件"><span class="nav-number">6.</span> <span class="nav-text">WKWebView加载本地html文件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#当资源存放在沙盒目录："><span class="nav-number">6.1.</span> <span class="nav-text">当资源存放在沙盒目录：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">临也</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
