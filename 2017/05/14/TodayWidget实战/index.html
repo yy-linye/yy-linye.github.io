@@ -90,12 +90,11 @@
 
 
 
-<meta name="description" content="什么是Today Widgettoday widget是App Extensions中的一种，可以让用户快速的访问重要的信息，例如：查看天气，获取股票信息，查看清单列表等等。就算在锁屏状态下用户依旧可以使用widget。（以下简称widget） Apple 指出，确保widget用于提供你认为最合适的任务，可以帮助用户快速更新数据，或者完成简单的任务，不要将一些冗长的任务和功能加到widget中。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Today Widget实战">
 <meta property="og:url" content="http://yoursite.com/2017/05/14/TodayWidget实战/index.html">
 <meta property="og:site_name" content="临也的小树林">
-<meta property="og:description" content="什么是Today Widgettoday widget是App Extensions中的一种，可以让用户快速的访问重要的信息，例如：查看天气，获取股票信息，查看清单列表等等。就算在锁屏状态下用户依旧可以使用widget。（以下简称widget） Apple 指出，确保widget用于提供你认为最合适的任务，可以帮助用户快速更新数据，或者完成简单的任务，不要将一些冗长的任务和功能加到widget中。">
+<meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1496651540456.png">
 <meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1488330898440.png">
 <meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1488331189473.png">
 <meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1488351656258.png">
@@ -113,11 +112,10 @@
 <meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1488418622919.png">
 <meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1488419807618.png">
 <meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1488376506989.png">
-<meta property="og:updated_time" content="2017-05-14T06:02:11.000Z">
+<meta property="og:updated_time" content="2017-06-05T08:32:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Today Widget实战">
-<meta name="twitter:description" content="什么是Today Widgettoday widget是App Extensions中的一种，可以让用户快速的访问重要的信息，例如：查看天气，获取股票信息，查看清单列表等等。就算在锁屏状态下用户依旧可以使用widget。（以下简称widget） Apple 指出，确保widget用于提供你认为最合适的任务，可以帮助用户快速更新数据，或者完成简单的任务，不要将一些冗长的任务和功能加到widget中。">
-<meta name="twitter:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1488330898440.png">
+<meta name="twitter:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1496651540456.png">
 
 
 
@@ -334,8 +332,11 @@
       
 
       
-        <h2 id="什么是Today-Widget"><a href="#什么是Today-Widget" class="headerlink" title="什么是Today Widget"></a>什么是Today Widget</h2><p>today widget是App Extensions中的一种，可以让用户快速的访问重要的信息，例如：查看天气，获取股票信息，查看清单列表等等。就算在锁屏状态下用户依旧可以使用widget。（以下简称widget）</p>
-<p>Apple 指出，确保widget用于提供你认为最合适的任务，可以帮助用户快速更新数据，或者完成简单的任务，不要将一些冗长的任务和功能加到widget中。<br><a id="more"></a><br>widget的使用建议：</p>
+        <p><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1496651540456.png" width="600"></p>
+<a id="more"></a>
+<h2 id="什么是Today-Widget"><a href="#什么是Today-Widget" class="headerlink" title="什么是Today Widget"></a>什么是Today Widget</h2><p>today widget是App Extensions中的一种，可以让用户快速的访问重要的信息，例如：查看天气，获取股票信息，查看清单列表等等。就算在锁屏状态下用户依旧可以使用widget。（以下简称widget）</p>
+<p>Apple 指出，确保widget用于提供你认为最合适的任务，可以帮助用户快速更新数据，或者完成简单的任务，不要将一些冗长的任务和功能加到widget中。</p>
+<p>widget的使用建议：</p>
 <ul>
 <li>确保内容看起来总是最新的</li>
 <li>对于用户交互的反馈能够表现良好</li>
@@ -368,7 +369,7 @@
     borderColor = [UIColor colorWithRed:221/255.0 green:221/255.0 blue:221/255.0 alpha:0.3];
     self.preferredContentSize = CGSizeMake(0, 170);
 }
-</code></pre><h5 id="iOS-10之前"><a href="#iOS-10之前" class="headerlink" title="iOS 10之前"></a>iOS 10之前</h5><p>我的做法是iOS 10之前直接使用<code>self.preferredContentSize = CGSizeMake(0, 170);</code>来设置widget展示视图的大小。当然你需要动态的改变大小的话，可以自己在对应的事件里去改变<code>preferredContentSize</code>。</p>
+</code></pre><h4 id="iOS-10之前"><a href="#iOS-10之前" class="headerlink" title="iOS 10之前"></a>iOS 10之前</h4><p>我的做法是iOS 10之前直接使用<code>self.preferredContentSize = CGSizeMake(0, 170);</code>来设置widget展示视图的大小。当然你需要动态的改变大小的话，可以自己在对应的事件里去改变<code>preferredContentSize</code>。</p>
 <p><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1488359521909.png" width="229"></p>
 <p>我们可以看到这时候widget是处于偏移的状态，这时候我们可以使用<code>NCWidgetProviding</code>给出的协议方法来解决。</p>
 <pre><code>- (UIEdgeInsets)widgetMarginInsetsForProposedMarginInsets:(UIEdgeInsets)defaultMarginInsets{
@@ -376,7 +377,7 @@ return UIEdgeInsetsMake(0, 10, 0, 10);
 }
 </code></pre><p>设置widget的左右边距为10。结果如下。</p>
 <p><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1488359690319.png" width="229"></p>
-<h5 id="iOS-10上折叠和展开处理"><a href="#iOS-10上折叠和展开处理" class="headerlink" title="iOS 10上折叠和展开处理"></a>iOS 10上折叠和展开处理</h5><p>iOS 10之后<code>NSExtensionContext</code>新增了<code>widgetLargestAvailableDisplayMode</code>属性，用来确认当前widget是展开还是折叠状态。折叠状态的值是固定的大小，展开状态的时候大小可以自定义，如果我们只需要一个固定的大小的话，就使用和iOS 10之前一样的写法就行。如果我们希望widget可以在折叠和展开的时候显示不同的UI，我们可以在DisplayMode属性值改变的时候去改变widget的高度。</p>
+<h4 id="iOS-10上折叠和展开处理"><a href="#iOS-10上折叠和展开处理" class="headerlink" title="iOS 10上折叠和展开处理"></a>iOS 10上折叠和展开处理</h4><p>iOS 10之后<code>NSExtensionContext</code>新增了<code>widgetLargestAvailableDisplayMode</code>属性，用来确认当前widget是展开还是折叠状态。折叠状态的值是固定的大小，展开状态的时候大小可以自定义，如果我们只需要一个固定的大小的话，就使用和iOS 10之前一样的写法就行。如果我们希望widget可以在折叠和展开的时候显示不同的UI，我们可以在DisplayMode属性值改变的时候去改变widget的高度。</p>
 <p>如果我们希望widget初始化状态就是展开，我们可以在<code>viewWillAppear</code>中将widget的model设为<code>NCWidgetDisplayModeExpanded</code>。<strong>记得加上版本判断</strong>。</p>
 <pre><code>- (void)viewWillAppear:(BOOL)animated {
 [super viewWillAppear:animated];
@@ -460,11 +461,8 @@ end
 target &apos;TestHostApp&apos; do
  pod &apos;JPFPSStatus&apos;, &apos;~&gt; 0.1&apos;
 end
-</code></pre><p>如果我们直接加入widget的target，就会引用到多余的第三方库，这是我们可以使用<code>abstract_target</code>关键字，它可以使多个target共享相同的pod。最终写法如下：</p>
-<pre><code>platform :ios, &apos;7.0&apos;
-source &apos;git@192.168.1.10:ios/DDSpecRepo.git&apos;
-
-abstract_target &apos;HostApp&apos; do
+</code></pre><p>如果我们直接加入widget的target，就会引用到多余的第三方库，这是我们可以使用<code>abstract_target</code>关键字，它可以使多个target共享相同的pod。最终写法如下：<br>​<br>    platform :ios, ‘7.0’<br>    source ‘git@192.168.1.10:ios/DDSpecRepo.git’</p>
+<pre><code>abstract_target &apos;HostApp&apos; do
 pod &apos;HTMLAttributedString&apos;, &apos;~&gt; 0.0.1&apos;
 pod &apos;HMSegmentedControl&apos;, &apos;~&gt; 1.5.2&apos;
 pod &apos;UITableView+FDTemplateLayoutCell&apos;, &apos;~&gt; 1.4&apos;
@@ -618,7 +616,7 @@ end
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -626,6 +624,15 @@ end
 
           
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
           
 
         </nav>
@@ -657,7 +664,7 @@ end
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是Today-Widget"><span class="nav-number">1.</span> <span class="nav-text">什么是Today Widget</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建一个Today-Widget"><span class="nav-number">2.</span> <span class="nav-text">创建一个Today Widget</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Today-Widget开发"><span class="nav-number">3.</span> <span class="nav-text">Today Widget开发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#UI"><span class="nav-number">3.1.</span> <span class="nav-text">UI</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#iOS-10之前"><span class="nav-number">3.1.0.1.</span> <span class="nav-text">iOS 10之前</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#iOS-10上折叠和展开处理"><span class="nav-number">3.1.0.2.</span> <span class="nav-text">iOS 10上折叠和展开处理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调起主App"><span class="nav-number">3.2.</span> <span class="nav-text">调起主App</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据共享-App-Groups"><span class="nav-number">3.3.</span> <span class="nav-text">数据共享 - App Groups</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#共享代码"><span class="nav-number">3.4.</span> <span class="nav-text">共享代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络部分"><span class="nav-number">3.5.</span> <span class="nav-text">网络部分</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后是打包时遇到的坑"><span class="nav-number">4.</span> <span class="nav-text">最后是打包时遇到的坑</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是Today-Widget"><span class="nav-number">1.</span> <span class="nav-text">什么是Today Widget</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建一个Today-Widget"><span class="nav-number">2.</span> <span class="nav-text">创建一个Today Widget</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Today-Widget开发"><span class="nav-number">3.</span> <span class="nav-text">Today Widget开发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#UI"><span class="nav-number">3.1.</span> <span class="nav-text">UI</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#iOS-10之前"><span class="nav-number">3.1.1.</span> <span class="nav-text">iOS 10之前</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#iOS-10上折叠和展开处理"><span class="nav-number">3.1.2.</span> <span class="nav-text">iOS 10上折叠和展开处理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调起主App"><span class="nav-number">3.2.</span> <span class="nav-text">调起主App</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据共享-App-Groups"><span class="nav-number">3.3.</span> <span class="nav-text">数据共享 - App Groups</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#共享代码"><span class="nav-number">3.4.</span> <span class="nav-text">共享代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络部分"><span class="nav-number">3.5.</span> <span class="nav-text">网络部分</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后是打包时遇到的坑"><span class="nav-number">4.</span> <span class="nav-text">最后是打包时遇到的坑</span></a></li></ol></div>
             
 
           </div>

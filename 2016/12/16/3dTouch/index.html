@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="iOS," />
 
 
 
@@ -90,18 +90,17 @@
 
 
 
-<meta name="description" content="hljs.tabReplace = &apos; &apos;; hljs.initHighlightingOnLoad();   Home screen quick actionStatic Quick actions在工程的info.plist中加入UIApplicationShortcutItems，这个key对应的是一个array">
+<meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="3DTouch">
 <meta property="og:url" content="http://yoursite.com/2016/12/16/3dTouch/index.html">
 <meta property="og:site_name" content="临也的小树林">
-<meta property="og:description" content="hljs.tabReplace = &apos; &apos;; hljs.initHighlightingOnLoad();   Home screen quick actionStatic Quick actions在工程的info.plist中加入UIApplicationShortcutItems，这个key对应的是一个array">
+<meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1496650620989.png">
 <meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1481621098652.png">
-<meta property="og:updated_time" content="2017-05-14T04:29:41.000Z">
+<meta property="og:updated_time" content="2017-06-05T08:17:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="3DTouch">
-<meta name="twitter:description" content="hljs.tabReplace = &apos; &apos;; hljs.initHighlightingOnLoad();   Home screen quick actionStatic Quick actions在工程的info.plist中加入UIApplicationShortcutItems，这个key对应的是一个array">
-<meta name="twitter:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1481621098652.png">
+<meta name="twitter:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1496650620989.png">
 
 
 
@@ -283,7 +282,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-16T10:47:30+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-16T17:26:01+08:00">
                 2016-12-16
               </time>
             
@@ -318,105 +317,53 @@
       
 
       
-        <p><link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/xcode.min.css"></p>
-<script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
-<script>
-hljs.tabReplace = ' ';
-hljs.initHighlightingOnLoad();
-</script>
-
-<h2 id="Home-screen-quick-action"><a href="#Home-screen-quick-action" class="headerlink" title="Home screen quick action"></a>Home screen quick action</h2><h4 id="Static-Quick-actions"><a href="#Static-Quick-actions" class="headerlink" title="Static Quick actions"></a>Static Quick actions</h4><p>在工程的info.plist中加入UIApplicationShortcutItems，这个key对应的是一个array</p>
-<p><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1481621098652.png"><br><a id="more"></a></p>
-<p>UIApplicationShortcutItemTitle : 标题</p>
-<p>UIApplicationShortcutItemSubtitle : 副标题</p>
-<p>UIApplicationShortcutItemType: item的标识</p>
-<p>UIApplicationShortcutItmeIconFile : 自定义图片名</p>
-<p>UIApplicationShortcutItmeIconType : 系统定义的图片</p>
-<p>UIApplicationShortcutItemUserInfo : 自定义字典<br><!--more--></p>
-<h4 id="Dynamic-quick-actions"><a href="#Dynamic-quick-actions" class="headerlink" title="Dynamic quick actions"></a>Dynamic quick actions</h4><h6 id="1、-使用自定义图片创建quick-actions"><a href="#1、-使用自定义图片创建quick-actions" class="headerlink" title="1、 使用自定义图片创建quick actions"></a>1、 使用自定义图片创建quick actions</h6><pre><code>UIApplicationShortcutIcon *oilIcon = [UIApplicationShortcutIcon iconWithTemplateImageName:@&quot;3DTouch_oil&quot;];
-
-UIApplicationShortcutItem *oilItem = [[UIApplicationShortcutItem alloc] initWithType:DDShortcutTypeOil localizedTitle:@&quot;油卡充值&quot; localizedSubtitle:nil icon:oilIcon userInfo:nil];    
-</code></pre><h6 id="2、-使用系统图片创建quick-actions"><a href="#2、-使用系统图片创建quick-actions" class="headerlink" title="2、 使用系统图片创建quick actions"></a>2、 使用系统图片创建quick actions</h6><pre><code>UIApplicationShortcutIcon *shopListIcon = [UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeSearch];
-
-UIApplicationShortcutItem *shopListItem = [[UIApplicationShortcutItem alloc] initWithType:DDShortcutTypeShopList localizedTitle:@&quot;附近商家&quot; localizedSubtitle:nil icon:shopListIcon userInfo:nil];
-</code></pre><h4 id="Quick-actions-点击事件"><a href="#Quick-actions-点击事件" class="headerlink" title="Quick actions 点击事件"></a>Quick actions 点击事件</h4><blockquote>
+        <p><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1496650620989.png" width="600"></p>
+<a id="more"></a>
+<h2 id="Home-screen-quick-action"><a href="#Home-screen-quick-action" class="headerlink" title="Home screen quick action"></a>Home screen quick action</h2><h3 id="Static-Quick-actions"><a href="#Static-Quick-actions" class="headerlink" title="Static Quick actions"></a>Static Quick actions</h3><p>在工程的info.plist中加入UIApplicationShortcutItems，这个key对应的是一个array</p>
+<p><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1481621098652.png"></p>
+<ul>
+<li>UIApplicationShortcutItemTitle : 标题</li>
+<li>UIApplicationShortcutItemSubtitle : 副标题</li>
+<li>UIApplicationShortcutItemType: item的标识</li>
+<li>UIApplicationShortcutItmeIconFile : 自定义图片名</li>
+<li>UIApplicationShortcutItmeIconType : 系统定义的图片</li>
+<li>UIApplicationShortcutItemUserInfo : 自定义字典</li>
+</ul>
+<h3 id="Dynamic-quick-actions"><a href="#Dynamic-quick-actions" class="headerlink" title="Dynamic quick actions"></a>Dynamic quick actions</h3><h4 id="使用自定义图片创建quick-actions"><a href="#使用自定义图片创建quick-actions" class="headerlink" title="使用自定义图片创建quick actions"></a>使用自定义图片创建quick actions</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">UIApplicationShortcutIcon *oilIcon = [UIApplicationShortcutIcon iconWithTemplateImageName:@&quot;3DTouch_oil&quot;];</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">UIApplicationShortcutItem *oilItem = [[UIApplicationShortcutItem alloc] initWithType:DDShortcutTypeOil localizedTitle:@&quot;油卡充值&quot; localizedSubtitle:nil icon:oilIcon userInfo:nil];</div></pre></td></tr></table></figure>
+<h4 id="使用系统图片创建quick-actions"><a href="#使用系统图片创建quick-actions" class="headerlink" title="使用系统图片创建quick actions"></a>使用系统图片创建quick actions</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">UIApplicationShortcutIcon *shopListIcon = [UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeSearch];</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">UIApplicationShortcutItem *shopListItem = [[UIApplicationShortcutItem alloc] initWithType:DDShortcutTypeShopList localizedTitle:@&quot;附近商家&quot; localizedSubtitle:nil icon:shopListIcon userInfo:nil];</div></pre></td></tr></table></figure>
+<h3 id="Quick-actions-点击事件"><a href="#Quick-actions-点击事件" class="headerlink" title="Quick actions 点击事件"></a>Quick actions 点击事件</h3><blockquote>
 <p>Called when the user selects a Home screen quick action for your app</p>
 </blockquote>
-<pre><code>- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL succeeded))completionHandler 
-</code></pre><h2 id="UIKit-peek-and-pop"><a href="#UIKit-peek-and-pop" class="headerlink" title="UIKit peek and pop"></a>UIKit peek and pop</h2><h4 id="Peek"><a href="#Peek" class="headerlink" title="Peek"></a>Peek</h4><p>1、 需要在运行时检查3dTouch可否使用<br>2、 注册一个控制器用于peek&amp;pop操作，指定用户触发预览的sourceView，在这里我们传入tableview，这里有个注意点，如果我们传入self.view，那么在后面获取indexPath的时候就需要转换坐标系，不然会出现错误</p>
-<pre><code>if ([self.traitCollection respondsToSelector:@selector(forceTouchCapability)] &amp;&amp; (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable)) {
-      [self registerForPreviewingWithDelegate:self sourceView:self.tableView];
-}
-</code></pre><p>如果想禁用预览视图，可以调用<code>unregisterForPreviewingWithContext:</code>方法,传入registered时候返回的上下文对象。</p>
-<p>3、申明协议<br>@interface DDTableViewController ()<br>           <uiviewcontrollerpreviewingdelegate, ...=""></uiviewcontrollerpreviewingdelegate,></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL succeeded))completionHandler</div></pre></td></tr></table></figure>
+<h2 id="UIKit-peek-and-pop"><a href="#UIKit-peek-and-pop" class="headerlink" title="UIKit peek and pop"></a>UIKit peek and pop</h2><h3 id="Peek"><a href="#Peek" class="headerlink" title="Peek"></a>Peek</h3><p>1、 需要在运行时检查3dTouch可否使用<br>2、 注册一个控制器用于peek&amp;pop操作，指定用户触发预览的sourceView，在这里我们传入tableview，这里有个注意点，如果我们传入self.view，那么在后面获取indexPath的时候就需要转换坐标系，不然会出现错误</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">if ([self.traitCollection respondsToSelector:@selector(forceTouchCapability)] &amp;&amp; (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable)) &#123;</div><div class="line">      [self registerForPreviewingWithDelegate:self sourceView:self.tableView];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>如果想禁用预览视图，可以调用<code>unregisterForPreviewingWithContext:</code>方法,传入registered时候返回的上下文对象。</p>
+<p>3、申明协议</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@interface DDTableViewController ()&lt;UIViewControllerPreviewingDelegate, ...&gt;</div></pre></td></tr></table></figure>
 <p>4、当用户按下sourceView，系统会调用<code>previewingContext:viewControllerForLocation:</code>，返回一个我们需要peek&amp;pop的vc</p>
-<pre><code>- (UIViewController *)previewingContext:(id&lt;UIViewControllerPreviewing&gt;)previewingContext viewControllerForLocation:(CGPoint)location {
-
-    // 获取indexPath
-    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:location];
-
-    // 获取对应的cell
-    DDBaseTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-
-    // 设置上下文对象的sourceRect为cell.frame，系统可以利用sourceRect实现模糊的视觉效果
-      if (cell) {
-          previewingContext.sourceRect = cell.frame;
-      }
-      // 我们使用navigationController作为previewController
-       return [self configNavigationControllerWithIndexPath:indexPath];
-}
-</code></pre><blockquote>
-<p>####Notes  </p>
-<ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">- (UIViewController *)previewingContext:(id&lt;UIViewControllerPreviewing&gt;)previewingContext viewControllerForLocation:(CGPoint)location &#123;</div><div class="line">    // 获取indexPath</div><div class="line">    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:location];</div><div class="line">    </div><div class="line">    // 获取对应的cell</div><div class="line">    DDBaseTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];</div><div class="line">    </div><div class="line">    // 设置上下文对象的sourceRect为cell.frame，系统可以利用sourceRect实现模糊的视觉效果</div><div class="line">  		if (cell) &#123;</div><div class="line">            previewingContext.sourceRect = cell.frame;</div><div class="line">        &#125;</div><div class="line">    // 我们使用navigationController作为previewController</div><div class="line">    return [self configNavigationControllerWithIndexPath:indexPath];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h4><ul>
 <li>我们创建，配置，最后返回一个detailViewController，这里有个小问题，我们的detailViewController通常是放在一个navigation 中使用的，并且在navigation bar 上显示title,所以我们应该创建一个navigationController 包含我们的detailViewController。</li>
 <li>当用户按在我们的sourceView上，周围变的模糊，代表可以继续peek，继续深按会看到预览控制器。</li>
 <li>如果你想调整预览视图的大小，可以使用viewController的<code>preferredContentSize</code>属性。 </li>
-</ol>
-</blockquote>
-<h4 id="Popping"><a href="#Popping" class="headerlink" title="Popping"></a>Popping</h4><p>当我们更加用力去按，系统会调用<code>previewingContext:commitViewController</code>,因为我们已经有了一个view controller的实例，所以我们只需要把它展示出来。</p>
-<pre><code>- (void)previewingContext:
-(id&lt;UIViewControllerPreviewing&gt;)previewingContextcommitViewController:(UIViewController *)viewControllerToCommit {
-
-// showDetailViewController:sender:方法是iOS8之后才有的
-  [self showDetailViewController:viewControllerToCommit sender:self]; 
-
-}     
-</code></pre><h2 id="Preview-Actions"><a href="#Preview-Actions" class="headerlink" title="Preview Actions"></a>Preview Actions</h2><p>如果你实现了Preview Actions，当用户进行peek操作的时候可以向上滑动，会显示quick actions。</p>
+</ul>
+<h3 id="Popping"><a href="#Popping" class="headerlink" title="Popping"></a>Popping</h3><p>当我们更加用力去按，系统会调用<code>previewingContext:commitViewController</code>,因为我们已经有了一个view controller的实例，所以我们只需要把它展示出来。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">- (void)previewingContext:(id&lt;UIViewControllerPreviewing&gt;)previewingContextcommitViewController:(UIViewController *)viewControllerToCommit &#123;</div><div class="line">	// showDetailViewController:sender:方法是iOS8之后才有的</div><div class="line">  	[self showDetailViewController:viewControllerToCommit sender:self]; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Preview-Actions"><a href="#Preview-Actions" class="headerlink" title="Preview Actions"></a>Preview Actions</h2><p>如果你实现了Preview Actions，当用户进行peek操作的时候可以向上滑动，会显示quick actions。</p>
 <p>重写viewController的previewActionItems方法</p>
 <p>DDDetailViewController.m</p>
-<pre><code>- (NSArray&lt;id&lt;UIPreviewActionItem&gt;&gt; *)previewActionItems {
-  return self.previewActions;
-}
-
-- (NSArray&lt;id&lt;UIPreviewActionItem&gt;&gt; *)previewActions {    
-  if (_previewActions == nil) {
-         UIPreviewAction *printAction = [UIPreviewAction actionWithTitle:@&quot;Print&quot; style:UIPreviewActionStyleDefault handler:^(UIPreviewAction * _Nonnull action,UIViewController * _Nonnull previewViewController) {
-       // 处理回调事件
-       }];
-        _previewActions = @[printAction];
-      }
-  return _previewActions;
-}
-</code></pre><p>如果我们使用了navigationController作为previewController 我们还需要写一个navigationController的分类，返回我们在DetailViewController中已经覆写过的previewActionItems。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">- (NSArray&lt;id&lt;UIPreviewActionItem&gt;&gt; *)previewActionItems &#123;</div><div class="line">    return self.previewActions;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (NSArray&lt;id&lt;UIPreviewActionItem&gt;&gt; *)previewActions &#123;</div><div class="line">    if (_previewActions == nil) &#123;</div><div class="line">        UIPreviewAction *printAction = [UIPreviewAction actionWithTitle:@&quot;Print&quot; style:UIPreviewActionStyleDefault handler:^(UIPreviewAction * _Nonnull action,UIViewController * _Nonnull previewViewController) &#123;</div><div class="line">            // 处理回调事件</div><div class="line">     	  &#125;];</div><div class="line">        _previewActions = @[printAction];</div><div class="line">  		&#125;</div><div class="line">    return _previewActions;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>如果我们使用了navigationController作为previewController 我们还需要写一个navigationController的分类，返回我们在DetailViewController中已经覆写过的previewActionItems。</p>
 <p>UINavigationController + PreviewActions.m</p>
-<pre><code>- (NSArray&lt;id&lt;UIPreviewActionItem&gt;&gt; *)previewActionItems {
-if (self.topViewController.previewActionItems.count &gt; 0) {
-    return self.topViewController.previewActionItems;
-}else {
-    return super.previewActionItems;
-}
-</code></pre><p>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">- (NSArray&lt;id&lt;UIPreviewActionItem&gt;&gt; *)previewActionItems &#123;</div><div class="line">    if (self.topViewController.previewActionItems.count &gt; 0) &#123;</div><div class="line">        return self.topViewController.previewActionItems;</div><div class="line">    &#125;else &#123;</div><div class="line">        return super.previewActionItems;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="Web-view-peek-and-pop"><a href="#Web-view-peek-and-pop" class="headerlink" title="Web view peek and pop"></a>Web view peek and pop</h2><p>iOS9之后WKWebView和UIWebView增加了<code>allowsLinkPreview</code>属性用于是否支持peek&amp;pop。</p>
 <p>UIWebView的<code>allowsLinkPreview</code>默认为NO。</p>
 <p>WKWebView的<code>allowsLinkPreview</code>默认为YES。</p>
 <p>SFSafariViewController会自动处理peek&amp;pop的功能。</p>
 <h2 id="UITouch-force-properties"><a href="#UITouch-force-properties" class="headerlink" title="UITouch force properties"></a>UITouch force properties</h2><p>UITouch 新增了force和maximumPossibleForce属性，用于按压力度的处理。<br>我么可以在拿到UITouch的时候去根据按压力度做一些处理。</p>
-<pre><code>- (void)touchesMoved:(NSSet&lt;UITouch *&gt; *)touches withEvent:(UIEvent *)event {
-if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
-   UITouch *touch = [touches allObjects].firstObject;
- self.view.backgroundColor = [UIColor colorWithRed:220/255.f green:20/255.f blue:touch.force / touch.maximumPossibleForce alpha:1.0];
-}
-</code></pre><p>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">- (void)touchesMoved:(NSSet&lt;UITouch *&gt; *)touches withEvent:(UIEvent *)event &#123;</div><div class="line">    if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) &#123;</div><div class="line">        UITouch *touch = [touches allObjects].firstObject;</div><div class="line">        self.view.backgroundColor = [UIColor colorWithRed:220/255.f green:20/255.f blue:touch.force / touch.maximumPossibleForce alpha:1.0];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -443,6 +390,12 @@ if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
+          
+        </div>
       
 
       
@@ -537,7 +490,7 @@ if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -545,6 +498,15 @@ if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable
 
           
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
           
 
         </nav>
@@ -576,7 +538,7 @@ if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Home-screen-quick-action"><span class="nav-number">1.</span> <span class="nav-text">Home screen quick action</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Static-Quick-actions"><span class="nav-number">1.0.1.</span> <span class="nav-text">Static Quick actions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dynamic-quick-actions"><span class="nav-number">1.0.2.</span> <span class="nav-text">Dynamic quick actions</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1、-使用自定义图片创建quick-actions"><span class="nav-number">1.0.2.0.1.</span> <span class="nav-text">1、 使用自定义图片创建quick actions</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2、-使用系统图片创建quick-actions"><span class="nav-number">1.0.2.0.2.</span> <span class="nav-text">2、 使用系统图片创建quick actions</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Quick-actions-点击事件"><span class="nav-number">1.0.3.</span> <span class="nav-text">Quick actions 点击事件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UIKit-peek-and-pop"><span class="nav-number">2.</span> <span class="nav-text">UIKit peek and pop</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Peek"><span class="nav-number">2.0.1.</span> <span class="nav-text">Peek</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Popping"><span class="nav-number">2.0.2.</span> <span class="nav-text">Popping</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Preview-Actions"><span class="nav-number">3.</span> <span class="nav-text">Preview Actions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web-view-peek-and-pop"><span class="nav-number">4.</span> <span class="nav-text">Web view peek and pop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UITouch-force-properties"><span class="nav-number">5.</span> <span class="nav-text">UITouch force properties</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Home-screen-quick-action"><span class="nav-number">1.</span> <span class="nav-text">Home screen quick action</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Static-Quick-actions"><span class="nav-number">1.1.</span> <span class="nav-text">Static Quick actions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dynamic-quick-actions"><span class="nav-number">1.2.</span> <span class="nav-text">Dynamic quick actions</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用自定义图片创建quick-actions"><span class="nav-number">1.2.1.</span> <span class="nav-text">使用自定义图片创建quick actions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用系统图片创建quick-actions"><span class="nav-number">1.2.2.</span> <span class="nav-text">使用系统图片创建quick actions</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Quick-actions-点击事件"><span class="nav-number">1.3.</span> <span class="nav-text">Quick actions 点击事件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UIKit-peek-and-pop"><span class="nav-number">2.</span> <span class="nav-text">UIKit peek and pop</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Peek"><span class="nav-number">2.1.</span> <span class="nav-text">Peek</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Notes"><span class="nav-number">2.1.1.</span> <span class="nav-text">Notes</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Popping"><span class="nav-number">2.2.</span> <span class="nav-text">Popping</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Preview-Actions"><span class="nav-number">3.</span> <span class="nav-text">Preview Actions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web-view-peek-and-pop"><span class="nav-number">4.</span> <span class="nav-text">Web view peek and pop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UITouch-force-properties"><span class="nav-number">5.</span> <span class="nav-text">UITouch force properties</span></a></li></ol></div>
             
 
           </div>

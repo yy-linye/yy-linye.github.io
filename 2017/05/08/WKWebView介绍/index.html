@@ -90,12 +90,11 @@
 
 
 
-<meta name="description" content="WebKit的发展WebKit是用来让网页浏览器绘制网页的排版引擎  除了IE和Firefox之外，市面上叫得上名字的浏览器都是基于WebKit发展起来的，Chrome, Safari, Opera, 360等等。 WebKit的代码源自1998年KDE所开发的HTML排版引擎KHTML和JavaScript引擎KJS。2001年6月25号Apple的Don Melton开始了webkit项目，一">
 <meta property="og:type" content="article">
 <meta property="og:title" content="WKWebView介绍">
 <meta property="og:url" content="http://yoursite.com/2017/05/08/WKWebView介绍/index.html">
 <meta property="og:site_name" content="临也的小树林">
-<meta property="og:description" content="WebKit的发展WebKit是用来让网页浏览器绘制网页的排版引擎  除了IE和Firefox之外，市面上叫得上名字的浏览器都是基于WebKit发展起来的，Chrome, Safari, Opera, 360等等。 WebKit的代码源自1998年KDE所开发的HTML排版引擎KHTML和JavaScript引擎KJS。2001年6月25号Apple的Don Melton开始了webkit项目，一">
+<meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1496650061278.png">
 <meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1494239427274.png">
 <meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1494298609269.png">
 <meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1494298365686.png">
@@ -103,11 +102,10 @@
 <meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1494313174490.png">
 <meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1494313703501.png">
 <meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1494313811014.png">
-<meta property="og:updated_time" content="2017-05-14T04:26:45.000Z">
+<meta property="og:updated_time" content="2017-06-05T08:09:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WKWebView介绍">
-<meta name="twitter:description" content="WebKit的发展WebKit是用来让网页浏览器绘制网页的排版引擎  除了IE和Firefox之外，市面上叫得上名字的浏览器都是基于WebKit发展起来的，Chrome, Safari, Opera, 360等等。 WebKit的代码源自1998年KDE所开发的HTML排版引擎KHTML和JavaScript引擎KJS。2001年6月25号Apple的Don Melton开始了webkit项目，一">
-<meta name="twitter:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1494239427274.png">
+<meta name="twitter:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1496650061278.png">
 
 
 
@@ -324,8 +322,11 @@
       
 
       
-        <h4 id="WebKit的发展"><a href="#WebKit的发展" class="headerlink" title="WebKit的发展"></a>WebKit的发展</h4><p>WebKit是用来让网页浏览器绘制网页的排版引擎  除了IE和Firefox之外，市面上叫得上名字的浏览器都是基于WebKit发展起来的，Chrome, Safari, Opera, 360等等。</p>
-<p>WebKit的代码源自1998年<a href="https://zh.wikipedia.org/wiki/KDE" target="_blank" rel="external">KDE</a>所开发的HTML排版引擎<a href="https://zh.wikipedia.org/wiki/KHTML" target="_blank" rel="external">KHTML</a>和JavaScript引擎<a href="https://zh.wikipedia.org/wiki/KJS" target="_blank" rel="external">KJS</a>。2001年6月25号Apple的Don Melton开始了webkit项目，一开始webkit只是KHTML和KJS的fork，KHTML和KJS被移植到OS X上，并重命名为WebCore和JavaScriptCore。<br><a id="more"></a><br>由于KHTML和WebCore这两个分支有着不同的开发目的，所以他们代码互补的难度越来越高，后来经过双方不断的沟通和合作，问题得以解决，最终在2010年8月KDE开发平台4.5发布。它同时支持WebKit及KHTML，而KHTML的开发仍在继续。</p>
+        <p><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1496650061278.png" width="600"></p>
+<a id="more"></a>
+<h4 id="WebKit的发展"><a href="#WebKit的发展" class="headerlink" title="WebKit的发展"></a>WebKit的发展</h4><p>WebKit是用来让网页浏览器绘制网页的排版引擎  除了IE和Firefox之外，市面上叫得上名字的浏览器都是基于WebKit发展起来的，Chrome, Safari, Opera, 360等等。</p>
+<p>WebKit的代码源自1998年<a href="https://zh.wikipedia.org/wiki/KDE" target="_blank" rel="external">KDE</a>所开发的HTML排版引擎<a href="https://zh.wikipedia.org/wiki/KHTML" target="_blank" rel="external">KHTML</a>和JavaScript引擎<a href="https://zh.wikipedia.org/wiki/KJS" target="_blank" rel="external">KJS</a>。2001年6月25号Apple的Don Melton开始了webkit项目，一开始webkit只是KHTML和KJS的fork，KHTML和KJS被移植到OS X上，并重命名为WebCore和JavaScriptCore。</p>
+<p>由于KHTML和WebCore这两个分支有着不同的开发目的，所以他们代码互补的难度越来越高，后来经过双方不断的沟通和合作，问题得以解决，最终在2010年8月KDE开发平台4.5发布。它同时支持WebKit及KHTML，而KHTML的开发仍在继续。</p>
 <p>2005年6月7日Webkit开源</p>
 <p>2007年11月完成对HTML5媒体特色的支持，允许页面中以本地的方式嵌入视频，并且可以被script所控制。</p>
 <p>2008年6月2日，WebKit项目宣布他们重写了JavaScriptCore。</p>
@@ -382,9 +383,18 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// 设置内容交互控制器 用于处理JavaScript与native交互</div><div class="line">WKUserContentController * userController = [[WKUserContentController alloc]init];</div><div class="line">        </div><div class="line">//设置处理代理并且注册要被js调用的方法名称</div><div class="line">[userController addScriptMessageHandler:self name:@&quot;nameAction&quot;];</div><div class="line">        </div><div class="line">//js注入，注入一个测试方法。</div><div class="line">NSString *javaScriptSource = @&quot;window.webkit.messageHandlers.nameAction.postMessage(&#123;\&quot;name\&quot;:\&quot;linye\&quot;&#125;)&quot;;</div><div class="line">WKUserScript *userScript = [[WKUserScript alloc] initWithSource:javaScriptSource injectionTime:WKUserScriptInjectionTimeAtDocumentStart forMainFrameOnly:YES];// forMainFrameOnly:NO(全局窗口)，yes（只限主窗口）</div><div class="line">[userController addUserScript:userScript];</div><div class="line">config.userContentController = userController;</div></pre></td></tr></table></figure>
 <p>注意：addScriptMessageHandler很容易引起循环引用，导致控制器无法被释放，所以需要在viewWillDisappear中移除handler</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">- (void)viewWillDisappear:(BOOL)animated</div><div class="line">&#123;</div><div class="line">    [super viewWillDisappear:animated];</div><div class="line">    // 因此这里要记得移除handlers</div><div class="line">    [self.webView.configuration.userContentController removeScriptMessageHandlerForName:@&quot;name&quot;];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 通过configuration创建WKWebView</div><div class="line">WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:config];</div><div class="line">```      </div><div class="line">当JavaScript通过window.webkit.messageHandlers.name.postMessage()方法来向native发送消息，支持OC中字典，数组，NSNumber等原生数据类型。在native代理的回调方法中，会获取到JavaScript传递进来的消息，如下：</div></pre></td></tr></table></figure>
-<p>-(void)userContentController:(WKUserContentController <em>)userContentController didReceiveScriptMessage:(WKScriptMessage </em>)message{<br>    //这里可以获取到JavaScript传递进来的消息<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">#### 关于native与JavaScript交互</div><div class="line"></div><div class="line">1.JavaScript调用native方法</div><div class="line"></div><div class="line">就是之前我们介绍的使用WKUserContentController添加Script，然后再代理方法里处理回调的方式。</div><div class="line"></div><div class="line">2.native调用JavaScript方法</div><div class="line"></div><div class="line">这种方式通过WKWebView直接调用evaluteJavaScript:completionHandler:方法来实现。</div><div class="line"></div><div class="line">3.将JavaScript代码注入到网页</div><div class="line"></div><div class="line">JavaScript代码的注入也是通过WKUserContentController来完成的，使用addUserScript:方法来注入JavaScript，其中需要通过WKUserScript类来生成要注入的对象。</div><div class="line">这种方式可以在网页中注入一些自定义的JavaScript代码，也可以注入自定义的方法，再使用evaluateJavaScript:completionHandler:来调用方法。</div><div class="line"></div><div class="line">#### WKWebView的WKNavigationDelegate</div><div class="line"></div><div class="line">下面给出一些在 UIWebView 中常用的方法的 WKWebView 版本。</div></pre></td></tr></table></figure></p>
-<p>//准备加载页面<br>UIWebViewDelegate - webView:shouldStartLoadWithRequest:navigationType<br>WKNavigationDelegate - webView:didStartProvisionalNavigation:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line">//已开始加载页面</div><div class="line">UIWebViewDelegate - webViewDidStartLoad:</div><div class="line">WKNavigationDelegate - webView:didCommitNavigation:</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 通过configuration创建WKWebView</div><div class="line">WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:config];</div></pre></td></tr></table></figure>
+<p>当JavaScript通过window.webkit.messageHandlers.name.postMessage()方法来向native发送消息，支持OC中字典，数组，NSNumber等原生数据类型。在native代理的回调方法中，会获取到JavaScript传递进来的消息，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">-(void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message&#123;</div><div class="line">    //这里可以获取到JavaScript传递进来的消息</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="关于native与JavaScript交互"><a href="#关于native与JavaScript交互" class="headerlink" title="关于native与JavaScript交互"></a>关于native与JavaScript交互</h4><p>1.JavaScript调用native方法</p>
+<p>就是之前我们介绍的使用WKUserContentController添加Script，然后再代理方法里处理回调的方式。</p>
+<p>2.native调用JavaScript方法</p>
+<p>这种方式通过WKWebView直接调用evaluteJavaScript:completionHandler:方法来实现。</p>
+<p>3.将JavaScript代码注入到网页</p>
+<p>JavaScript代码的注入也是通过WKUserContentController来完成的，使用addUserScript:方法来注入JavaScript，其中需要通过WKUserScript类来生成要注入的对象。<br>这种方式可以在网页中注入一些自定义的JavaScript代码，也可以注入自定义的方法，再使用evaluateJavaScript:completionHandler:来调用方法。</p>
+<h4 id="WKWebView的WKNavigationDelegate"><a href="#WKWebView的WKNavigationDelegate" class="headerlink" title="WKWebView的WKNavigationDelegate"></a>WKWebView的WKNavigationDelegate</h4><p>下面给出一些在 UIWebView 中常用的方法的 WKWebView 版本。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//准备加载页面 </div><div class="line">UIWebViewDelegate - webView:shouldStartLoadWithRequest:navigationType</div><div class="line">WKNavigationDelegate - webView:didStartProvisionalNavigation:</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//已开始加载页面</div><div class="line">UIWebViewDelegate - webViewDidStartLoad:</div><div class="line">WKNavigationDelegate - webView:didCommitNavigation:</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//页面已全部加载</div><div class="line">UIWebViewDelegate - webViewDidFinishLoad:</div><div class="line">WKNavigationDelegate - webView:didFinishNavigation:</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//加载页面失败</div><div class="line">UIWebViewDelegate - webView:didFailLoadWithError:</div><div class="line">WKNavigationDelegate - webView:didFailNavigation:withError:</div><div class="line">WKNavigationDelegate - webView:didFailProvisionalNavigation:withError:</div></pre></td></tr></table></figure>
 <p>WKNavagationDelegate协议还有两个重要方法，监听页面渲染流程与控制页面跳转</p>
@@ -537,7 +547,7 @@ loading 无法消失
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -545,6 +555,15 @@ loading 无法消失
 
           
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
           
 
         </nav>
@@ -576,7 +595,7 @@ loading 无法消失
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#WebKit的发展"><span class="nav-number">1.</span> <span class="nav-text">WebKit的发展</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WKWebView和UIWebView的对比"><span class="nav-number">2.</span> <span class="nav-text">WKWebView和UIWebView的对比</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用WKWebViewConfiguration对WKWebView进行配置"><span class="nav-number">3.</span> <span class="nav-text">使用WKWebViewConfiguration对WKWebView进行配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WKWebView的WKUIDelegate"><span class="nav-number">4.</span> <span class="nav-text">WKWebView的WKUIDelegate</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WKWebView-那些坑"><span class="nav-number">5.</span> <span class="nav-text">WKWebView 那些坑</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WKWebView加载本地html文件"><span class="nav-number">6.</span> <span class="nav-text">WKWebView加载本地html文件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#当资源存放在沙盒目录："><span class="nav-number">6.1.</span> <span class="nav-text">当资源存放在沙盒目录：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#WebKit的发展"><span class="nav-number">1.</span> <span class="nav-text">WebKit的发展</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WKWebView和UIWebView的对比"><span class="nav-number">2.</span> <span class="nav-text">WKWebView和UIWebView的对比</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用WKWebViewConfiguration对WKWebView进行配置"><span class="nav-number">3.</span> <span class="nav-text">使用WKWebViewConfiguration对WKWebView进行配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于native与JavaScript交互"><span class="nav-number">4.</span> <span class="nav-text">关于native与JavaScript交互</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WKWebView的WKNavigationDelegate"><span class="nav-number">5.</span> <span class="nav-text">WKWebView的WKNavigationDelegate</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WKWebView的WKUIDelegate"><span class="nav-number">6.</span> <span class="nav-text">WKWebView的WKUIDelegate</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WKWebView-那些坑"><span class="nav-number">7.</span> <span class="nav-text">WKWebView 那些坑</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WKWebView加载本地html文件"><span class="nav-number">8.</span> <span class="nav-text">WKWebView加载本地html文件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#当资源存放在沙盒目录："><span class="nav-number">8.1.</span> <span class="nav-text">当资源存放在沙盒目录：</span></a></li></ol></li></ol></div>
             
 
           </div>
