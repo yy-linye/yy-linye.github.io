@@ -298,6 +298,17 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/05/12/第一篇博文/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2016/05/12/第一篇博文/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -327,7 +338,7 @@
 <h4 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h4><blockquote>
 <p>这是最好的时代，这是最坏的时代，这是智慧的时代，这是愚蠢的时代；这是信仰的时期，这是怀疑的时期；这是光明的季节，这是黑暗的季节；这是希望之春，这是失望之冬；&gt; 人们面前有着各样事物，人们面前一无所有；人们正在直登天堂；人们正在直下地狱。</p>
 </blockquote>
-<h4 id="链接和Email"><a href="#链接和Email" class="headerlink" title="链接和Email"></a>链接和Email</h4><p>这是一个email <a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#x6f;&#58;&#x65;&#x78;&#x61;&#109;&#112;&#x6c;&#x65;&#x40;&#103;&#x6d;&#97;&#105;&#x6c;&#x2e;&#99;&#111;&#x6d;">&#x65;&#x78;&#x61;&#109;&#112;&#x6c;&#x65;&#x40;&#103;&#x6d;&#97;&#105;&#x6c;&#x2e;&#99;&#111;&#x6d;</a><br>这是一个网页链接 <a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a></p>
+<h4 id="链接和Email"><a href="#链接和Email" class="headerlink" title="链接和Email"></a>链接和Email</h4><p>这是一个email <a href="&#x6d;&#x61;&#105;&#108;&#x74;&#111;&#x3a;&#101;&#x78;&#97;&#109;&#x70;&#x6c;&#x65;&#x40;&#103;&#109;&#x61;&#x69;&#108;&#x2e;&#x63;&#111;&#109;">&#101;&#x78;&#97;&#109;&#x70;&#x6c;&#x65;&#x40;&#103;&#109;&#x61;&#x69;&#108;&#x2e;&#x63;&#111;&#109;</a><br>这是一个网页链接 <a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a></p>
 <p><a href="http://linye.trade/" target="_blank" rel="external">这是我的博客</a></p>
 <p><a href="http://25.io/mou/" target="_blank" rel="external">Markdown官网</a> </p>
 <h4 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h4><p><img src="http://www.easyicon.net/api/resizeApi.php?id=1117461&amp;size=128" alt="计算器"></p>
@@ -490,6 +501,27 @@
     <div>
       
         
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://obfiqkv2m.bkt.clouddn.com/markdown/1496654811232.png" alt="临也 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://obfiqkv2m.bkt.clouddn.com/markdown/1496654822598.png" alt="临也 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
     </div>
@@ -545,6 +577,13 @@
 
           
   <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
     
   </div>
 
@@ -604,10 +643,10 @@
             
             
             <div class="site-state-item site-state-tags">
-              
+              <a href="/tags/index.html">
                 <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">标签</span>
-              
+              </a>
             </div>
           
 
@@ -783,6 +822,26 @@
 
   
 
+    
+      <script id="dsq-count-scr" src="https://izaya.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2016/05/12/第一篇博文/';
+          this.page.identifier = '2016/05/12/第一篇博文/';
+          this.page.title = 'Mark Down 语法';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://izaya.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
 
 
 
@@ -801,10 +860,6 @@
   
 
 
-
-
-
-  
 
 
 
