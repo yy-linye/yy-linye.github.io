@@ -1,0 +1,814 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="手把手教你iOS内购开发">
+<meta property="og:url" content="http://yoursite.com/2017/06/06/手把手教你iOS内购开发/index.html">
+<meta property="og:site_name" content="临也的小树林">
+<meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1496719132370.png">
+<meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1496730441929.png">
+<meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1496731563340.png">
+<meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1496721134814.png">
+<meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1496722436696.png">
+<meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1496729051955.png">
+<meta property="og:updated_time" content="2017-06-07T01:42:30.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="手把手教你iOS内购开发">
+<meta name="twitter:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1496719132370.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/06/06/手把手教你iOS内购开发/"/>
+
+
+
+
+
+  <title>手把手教你iOS内购开发 | 临也的小树林</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">临也的小树林</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/06/手把手教你iOS内购开发/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="临也">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/dog.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="临也的小树林">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">手把手教你iOS内购开发</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-06T10:57:57+08:00">
+                2017-06-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/06/06/手把手教你iOS内购开发/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/06/06/手把手教你iOS内购开发/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1496719132370.png" width="600"></p>
+<a id="more"></a>
+<h2 id="内购流程"><a href="#内购流程" class="headerlink" title="内购流程"></a>内购流程</h2><p>内购流程可以分为两种</p>
+<ul>
+<li>单纯在客户端和苹果服务器之间处理</li>
+<li>经过服务端</li>
+</ul>
+<h3 id="内置模式的流程"><a href="#内置模式的流程" class="headerlink" title="内置模式的流程"></a>内置模式的流程</h3><ol>
+<li>客户端利用商品标识向App Store发起请求，询问能够销售的商品信息</li>
+<li>App Store返回商品信息，客户端可以进行UI展示</li>
+<li>用户选择需要购买的商品</li>
+<li>向App Store器发起付款请求</li>
+<li>App Store处理付款请求，返回交易信息</li>
+<li><p>交易完成，将购买的内容展示给用户</p>
+<p><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1496730441929.png" width="400"></p>
+</li>
+</ol>
+<p>以上是最常规的交易流程，除此之外我们还可以在App Store返回交易信息后进行交易的收据验证，验证无误后再告知用户最终的结果。</p>
+<p>一般我们将进行交易的收据验证过程放到服务端，因为放在客户端容易被破解，导致虚假付款也无法得到验证。而放在服务端则相对会安全一些。</p>
+<h3 id="服务器模式的流程"><a href="#服务器模式的流程" class="headerlink" title="服务器模式的流程"></a>服务器模式的流程</h3><ol>
+<li>客户端从服务器获取产品标识列表</li>
+<li>客户端向App Store发起请求，询问能够销售的商品信息</li>
+<li>App Store返回商品信息，客户端可以进行UI展示</li>
+<li>用户选择需要购买的产品</li>
+<li>向App Store器发起付款请求</li>
+<li>App Store处理付款请求，返回交易信息</li>
+<li>客户端将交易收据发送到服务器</li>
+<li>服务器收到收据后发送到App Store验证收据的有效性</li>
+<li>App Store返回收据的验证结果</li>
+<li>根据返回的验证结果决定交易是否成功</li>
+</ol>
+<p><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1496731563340.png" width="400"></p>
+<p>交易收据验证地址分为沙盒环境和生产环境</p>
+<ul>
+<li>沙盒环境：<a href="https://sandbox.itunes.apple.com/verifyReceipt" target="_blank" rel="external">https://sandbox.itunes.apple.com/verifyReceipt</a></li>
+<li>生产环境：<a href="https://buy.itunes.apple.com/verifyReceipt" target="_blank" rel="external">https://buy.itunes.apple.com/verifyReceipt</a></li>
+</ul>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li><p>先到iTunes Connect上填写协议、税务和银行业务（详细步骤可以参考这位作者写的<a href="http://www.jianshu.com/p/321efc31078d" target="_blank" rel="external">http://www.jianshu.com/p/321efc31078d</a>）</p>
+<p><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1496721134814.png" width="400"></p>
+</li>
+<li><p>添加app内购买项目（产品ID需要保证唯一性，一般可以使用项目的bundleId + 产品名称）</p>
+<p><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1496722436696.png" width="400"></p>
+</li>
+<li><p>在”用户和职能”中添加沙箱技术测试员（需要注意的是已经和apple id有关联的邮箱无法用于测试，可以新注册一个邮箱专用于测试，添加成功后，记得去邮箱验证。）</p>
+<p><img src="http://obfiqkv2m.bkt.clouddn.com/markdown/1496729051955.png" width="400"></p>
+</li>
+</ul>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p>我们这边主要介绍一下内置模式的实现</p>
+<ol>
+<li><p>通过商品ID列表向App Store询问商品信息列表（products就是商品ID集合，商品ID是你在iTunes Connect中添加的内购项目ID）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">NSSet *set = [NSSet setWithArray:products];</div><div class="line">// &quot;异步&quot;询问苹果能否销售</div><div class="line">SKProductsRequest *request = [[SKProductsRequest alloc] initWithProductIdentifiers:set];</div><div class="line">request.delegate = self;</div><div class="line">// 启动请求</div><div class="line">[request start];</div></pre></td></tr></table></figure>
+</li>
+<li><p>获取商品信息列表（遵守SKProductsRequestDelegate协议）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">// 获取商品信息的回调，拿到商品列表后我们可以进行UI的展示</div><div class="line">- (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response &#123;</div><div class="line">    if (self.productDict == nil) &#123;</div><div class="line">        self.productDict = [NSMutableDictionary dictionaryWithCapacity:response.products.count];</div><div class="line">    &#125;</div><div class="line">    NSMutableArray *productArray = [NSMutableArray array];</div><div class="line"></div><div class="line">    for (SKProduct *product in response.products) &#123;</div><div class="line">    // 这里我使用字典将商品信息存储起来，便于之后通过productIdentifier查找</div><div class="line">        [self.productDict setObject:product forKey:product.productIdentifier];</div><div class="line">        [productArray addObject:product];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>内购监听（可以在尽早的时间设置监听，因为当交易信息变化的时候App Store会通过监听方法通知应用）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[SKPaymentQueue defaultQueue] addTransactionObserver:self];</div></pre></td></tr></table></figure>
+</li>
+<li><p>用户购买商品</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// 取出商品</div><div class="line">SKProduct *product = self.productDict[productID];</div><div class="line"></div><div class="line">// 生成付款信息</div><div class="line">SKPayment *payment = [SKPayment paymentWithProduct:product];</div><div class="line"></div><div class="line">// 加入付款队列</div><div class="line">[[SKPaymentQueue defaultQueue] addPayment:payment];</div></pre></td></tr></table></figure>
+</li>
+<li><p>实现监听方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">// 付款队列发生变化的回调</div><div class="line">- (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray&lt;SKPaymentTransaction *&gt; *)transactions &#123;</div><div class="line">    for (SKPaymentTransaction *transaction in transactions) &#123;</div><div class="line">        </div><div class="line">        if (transaction.transactionState == SKPaymentTransactionStatePurchasing) &#123;// 正在购买</div><div class="line">            </div><div class="line">        &#125;else if (transaction.transactionState == SKPaymentTransactionStatePurchased) &#123;// 购买完成</div><div class="line">            if (self.checkAfterPay) &#123;// 向苹果验证购买凭证</div><div class="line">                // 代理</div><div class="line">                [self.delegate IAPToolBeginCheckingWithProductID:transaction.payment.productIdentifier];</div><div class="line">                // 验证购买凭据</div><div class="line">                [self verifyPurchaseWithProductID:transaction.payment.productIdentifier];</div><div class="line">            &#125;else &#123;</div><div class="line">                [self.delegate IAPToolBuySuccessWithProductID:transaction.payment.productIdentifier andInfo:nil];</div><div class="line">            &#125;</div><div class="line">            // 将交易从队列中删除</div><div class="line">            [[SKPaymentQueue defaultQueue] finishTransaction:transaction];</div><div class="line">        &#125;else if (transaction.transactionState == SKPaymentTransactionStateFailed) &#123;// 取消购买</div><div class="line">            </div><div class="line">            // 将交易从队列中删除</div><div class="line">            [[SKPaymentQueue defaultQueue] finishTransaction:transaction];</div><div class="line">            </div><div class="line">            [self.delegate IAPToolCanceledWithProductID:transaction.payment.productIdentifier];</div><div class="line">            </div><div class="line">        &#125;else if (transaction.transactionState == SKPaymentTransactionStateRestored) &#123;// 恢复购买</div><div class="line">            [self.delegate IAPToolRestoredProductID:transaction.payment.productIdentifier];</div><div class="line">            // 将交易从队列中删除</div><div class="line">            [[SKPaymentQueue defaultQueue] finishTransaction:transaction];</div><div class="line">        &#125;else if (transaction.transactionState == SKPaymentTransactionStateDeferred) &#123;// 购买事件延期</div><div class="line">            // 将交易从交易队列中删除</div><div class="line">            [[SKPaymentQueue defaultQueue] finishTransaction:transaction];</div><div class="line">        &#125;</div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>至于服务器流程的实现，基本就是多了从服务器获取商品ID集合和将交易收据发送给服务端进行验证的过程。可以在上面的代码中增加这些流程。</p>
+<h2 id="内购中的坑"><a href="#内购中的坑" class="headerlink" title="内购中的坑"></a>内购中的坑</h2><ol>
+<li><p>收据验证过程太耗时，基本需要3~6s。</p>
+<p>解决办法：将验证的过程放到异步线程去执行。</p>
+</li>
+<li><p>App Store服务宕机，如何确保成功付费的用户得到已购买的服务。</p>
+<p>解决办法：对于验证超时的收据，保存到数据库中，并标记为验证超时，定时任务每隔一断时间去App Store验证，确保能够获得收据的验证结果。</p>
+</li>
+<li><p>发送内购请求之后，切换了用户，导致内购请求的用户和内购成功之后上传给服务端的用户不同。</p>
+<p>解决办法：<code>SKMutablePayment</code>有一个<code>applicationUsername</code>的属性，我们可以在发起请求的时候将用户的标识赋值给它，在内购成功后，通过Payment取出这个值，这样可以确保交易的发起人是正确的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">SKMutablePayment *payment = [SKMutablePayment paymentWithProduct:product];</div><div class="line">payment.applicationUsername = [AppManager sharedInstance].userId.stringValue;</div><div class="line">[[SKPaymentQueue defaultQueue] addPayment:payment];</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">if (transaction.transactionState == SKPaymentTransactionStatePurchased) &#123;// 购买完成</div><div class="line">    NSLog(@&quot;发起交易请求的用户标识 ---- %@&quot;, transaction.payment.applicationUsername);</div><div class="line">    // 向服务端发起收据验证</div><div class="line">    [self verifyPurchaseWithTransaction:transaction];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>如果在发送内购请求后，程序崩溃或者被用户关闭，此时内购成功的回调还没有触发，我们也没有来得及将内购成功的消息发送给自家的服务端，这就会导致用户无法拿到自己的购买项目。</p>
+<p>解决办法：将<code>[[SKPaymentQueue defaultQueue] finishTransaction:transaction]</code>放到后台验证收据成功后再调用。为什么呢？因为只要你没有调用这个方法，就算你的交易已经成功，苹果也会当做这次交易没有完成，依旧会启动监听，也就是会调用<code>- (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray&lt;SKPaymentTransaction *&gt; *)transactions</code>这个方法，直到<code>finishTransaction</code>才算完成交易。</p>
+<p>利用这个特性，如果用户在内购请求后关闭应用，当再次打开时，只要我们设置了监听，就会触发回调方法，这样我们就拿到了上一次未完成的交易信息，发给后台验证，直到后台验证成功后，我们调用<code>[[SKPaymentQueue defaultQueue] finishTransaction:transaction]</code>，交易完成。</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://obfiqkv2m.bkt.clouddn.com/markdown/1496654811232.png" alt="临也 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://obfiqkv2m.bkt.clouddn.com/markdown/1496654822598.png" alt="临也 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/27/iOS-WIFI文件传输实战/" rel="next" title="iOS WIFI文件传输实战">
+                <i class="fa fa-chevron-left"></i> iOS WIFI文件传输实战
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/dog.png"
+               alt="临也" />
+          <p class="site-author-name" itemprop="name">临也</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#内购流程"><span class="nav-number">1.</span> <span class="nav-text">内购流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内置模式的流程"><span class="nav-number">1.1.</span> <span class="nav-text">内置模式的流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务器模式的流程"><span class="nav-number">1.2.</span> <span class="nav-text">服务器模式的流程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">2.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码实现"><span class="nav-number">3.</span> <span class="nav-text">代码实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内购中的坑"><span class="nav-number">4.</span> <span class="nav-text">内购中的坑</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">临也</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://izaya.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2017/06/06/手把手教你iOS内购开发/';
+          this.page.identifier = '2017/06/06/手把手教你iOS内购开发/';
+          this.page.title = '手把手教你iOS内购开发';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://izaya.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
