@@ -100,7 +100,7 @@
 <meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1496721134814.png">
 <meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1496722436696.png">
 <meta property="og:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1496729051955.png">
-<meta property="og:updated_time" content="2017-06-07T01:42:30.000Z">
+<meta property="og:updated_time" content="2017-06-07T02:17:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="手把手教你iOS内购开发">
 <meta name="twitter:image" content="http://obfiqkv2m.bkt.clouddn.com/markdown/1496719132370.png">
@@ -398,6 +398,13 @@
 </li>
 </ol>
 <p>至于服务器流程的实现，基本就是多了从服务器获取商品ID集合和将交易收据发送给服务端进行验证的过程。可以在上面的代码中增加这些流程。</p>
+<h2 id="内购测试注意点"><a href="#内购测试注意点" class="headerlink" title="内购测试注意点"></a>内购测试注意点</h2><ul>
+<li>测试包的BundleID需要与iTunes Connect上的一致。</li>
+<li>内购只能使用真机进行测试，并且是没有越狱过的。</li>
+<li>测试之前将原先App Store中的账号退出，不然支付的时候会错误。</li>
+<li>使用沙盒账号进行内购不会真正消费。</li>
+<li>一个沙盒账号，同一时间只能在一台真机上使用。</li>
+</ul>
 <h2 id="内购中的坑"><a href="#内购中的坑" class="headerlink" title="内购中的坑"></a>内购中的坑</h2><ol>
 <li><p>收据验证过程太耗时，基本需要3~6s。</p>
 <p>解决办法：将验证的过程放到异步线程去执行。</p>
@@ -607,7 +614,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#内购流程"><span class="nav-number">1.</span> <span class="nav-text">内购流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内置模式的流程"><span class="nav-number">1.1.</span> <span class="nav-text">内置模式的流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务器模式的流程"><span class="nav-number">1.2.</span> <span class="nav-text">服务器模式的流程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">2.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码实现"><span class="nav-number">3.</span> <span class="nav-text">代码实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内购中的坑"><span class="nav-number">4.</span> <span class="nav-text">内购中的坑</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#内购流程"><span class="nav-number">1.</span> <span class="nav-text">内购流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内置模式的流程"><span class="nav-number">1.1.</span> <span class="nav-text">内置模式的流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务器模式的流程"><span class="nav-number">1.2.</span> <span class="nav-text">服务器模式的流程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">2.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码实现"><span class="nav-number">3.</span> <span class="nav-text">代码实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内购测试注意点"><span class="nav-number">4.</span> <span class="nav-text">内购测试注意点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内购中的坑"><span class="nav-number">5.</span> <span class="nav-text">内购中的坑</span></a></li></ol></div>
             
 
           </div>
